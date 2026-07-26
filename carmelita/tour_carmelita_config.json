@@ -3,7 +3,7 @@
         {
             "id": "point_42",
             "name": "Entrada Principal ",
-            "image": "/img/tours/carmelita/pano_42.webp",
+            "image": "/img/tours/carmelita/pano_42.jpg",
             "hotspots": [
                 {
                     "target": "point_41",
@@ -31,7 +31,7 @@
         {
             "id": "point_43",
             "name": "Entrada corredor Izquierda 01",
-            "image": "/img/tours/carmelita/pano_43.webp",
+            "image": "/img/tours/carmelita/pano_43.jpg",
             "hotspots": [
                 {
                     "target": "point_42",
@@ -44,7 +44,7 @@
         {
             "id": "point_41",
             "name": "Entrada corredor Derecho 01",
-            "image": "/img/tours/carmelita/pano_41.webp",
+            "image": "/img/tours/carmelita/pano_41.jpg",
             "hotspots": [
                 {
                     "target": "point_40",
@@ -72,7 +72,7 @@
         {
             "id": "point_40",
             "name": "Entrada corredor Derecho 02",
-            "image": "/img/tours/carmelita/pano_40.webp",
+            "image": "/img/tours/carmelita/pano_40.jpg",
             "hotspots": [
                 {
                     "target": "point_41",
@@ -95,7 +95,7 @@
         {
             "id": "point_44",
             "name": "Garaje",
-            "image": "/img/tours/carmelita/pano_44.webp",
+            "image": "/img/tours/carmelita/pano_44.jpg",
             "hotspots": [
                 {
                     "target": "point_42",
@@ -108,7 +108,7 @@
         {
             "id": "point_39",
             "name": "Corredor trazero mirada montaña",
-            "image": "/img/tours/carmelita/pano_39.webp",
+            "image": "/img/tours/carmelita/pano_39.jpg",
             "hotspots": [
                 {
                     "target": "point_37",
@@ -135,7 +135,7 @@
         {
             "id": "point_38",
             "name": "Corredor trasero esquina derecha",
-            "image": "/img/tours/carmelita/pano_38.webp",
+            "image": "/img/tours/carmelita/pano_38.jpg",
             "hotspots": [
                 {
                     "target": "point_1",
@@ -163,7 +163,7 @@
         {
             "id": "point_23",
             "name": "Entrada interior 01",
-            "image": "/img/tours/carmelita/pano_23.webp",
+            "image": "/img/tours/carmelita/pano_23.jpg",
             "hotspots": [
                 {
                     "target": "point_22",
@@ -211,7 +211,7 @@
         {
             "id": "point_21",
             "name": "Sala Izquierda 01",
-            "image": "/img/tours/carmelita/pano_21.webp",
+            "image": "/img/tours/carmelita/pano_21.jpg",
             "hotspots": [
                 {
                     "target": "point_23",
@@ -243,7 +243,7 @@
         {
             "id": "point_22",
             "name": "Sala Derecha 01",
-            "image": "/img/tours/carmelita/pano_22.webp",
+            "image": "/img/tours/carmelita/pano_22.jpg",
             "hotspots": [
                 {
                     "target": "point_21",
@@ -275,7 +275,7 @@
         {
             "id": "point_24",
             "name": "Entrada  pasillo 01",
-            "image": "/img/tours/carmelita/pano_24.webp",
+            "image": "/img/tours/carmelita/pano_24.jpg",
             "hotspots": [
                 {
                     "target": "point_22",
@@ -332,7 +332,7 @@
         {
             "id": "point_25",
             "name": "Entrada Pasilla entre comedor y sala 3",
-            "image": "/img/tours/carmelita/pano_25.webp",
+            "image": "/img/tours/carmelita/pano_25.jpg",
             "hotspots": [
                 {
                     "target": "point_29",
@@ -384,7 +384,7 @@
         {
             "id": "point_26",
             "name": "Cocina entr comedor 01",
-            "image": "/img/tours/carmelita/pano_26.webp",
+            "image": "/img/tours/carmelita/pano_26.jpg",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -436,7 +436,7 @@
         {
             "id": "point_28",
             "name": "Cocina 02",
-            "image": "/img/tours/carmelita/pano_28.webp",
+            "image": "/img/tours/carmelita/pano_28.jpg",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -463,7 +463,7 @@
         {
             "id": "point_27",
             "name": "Cocina 03",
-            "image": "/img/tours/carmelita/pano_27.webp",
+            "image": "/img/tours/carmelita/pano_27.jpg",
             "hotspots": [
                 {
                     "target": "point_26",
@@ -495,7 +495,7 @@
         {
             "id": "point_29",
             "name": "Exterior Piscina 01",
-            "image": "/img/tours/carmelita/pano_29.webp",
+            "image": "/img/tours/carmelita/pano_29.jpg",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -537,7 +537,7 @@
         {
             "id": "point_30",
             "name": "camino sauna 01",
-            "image": "/img/tours/carmelita/pano_30.webp",
+            "image": "/img/tours/carmelita/pano_30.jpg",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -570,7 +570,7 @@
         {
             "id": "point_31",
             "name": "Sauna frente 01",
-            "image": "/img/tours/carmelita/pano_31.webp",
+            "image": "/img/tours/carmelita/pano_31.jpg",
             "hotspots": [
                 {
                     "target": "point_33",
@@ -608,7 +608,7 @@
         {
             "id": "point_33",
             "name": "Malla vista 01",
-            "image": "/img/tours/carmelita/pano_33.webp",
+            "image": "/img/tours/carmelita/pano_33.jpg",
             "hotspots": [
                 {
                     "target": "point_31",
@@ -636,7 +636,7 @@
         {
             "id": "point_32",
             "name": "Esquina Piscina 01",
-            "image": "/img/tours/carmelita/pano_32.webp",
+            "image": "/img/tours/carmelita/pano_32.jpg",
             "hotspots": [
                 {
                     "target": "point_33",
@@ -679,7 +679,7 @@
         {
             "id": "point_34",
             "name": "Piscina 02",
-            "image": "/img/tours/carmelita/pano_34.webp",
+            "image": "/img/tours/carmelita/pano_34.jpg",
             "hotspots": [
                 {
                     "target": "point_32",
@@ -721,7 +721,7 @@
         {
             "id": "point_35",
             "name": "Piscina 03",
-            "image": "/img/tours/carmelita/pano_35.webp",
+            "image": "/img/tours/carmelita/pano_35.jpg",
             "hotspots": [
                 {
                     "target": "point_34",
@@ -763,7 +763,7 @@
         {
             "id": "point_11",
             "name": "Corredor Exterior Piscina 01",
-            "image": "/img/tours/carmelita/pano_11.webp",
+            "image": "/img/tours/carmelita/pano_11.jpg",
             "hotspots": [
                 {
                     "target": "point_35",
@@ -816,7 +816,7 @@
         {
             "id": "point_10",
             "name": "entrada corredor piscina cuarto 01",
-            "image": "/img/tours/carmelita/pano_10.webp",
+            "image": "/img/tours/carmelita/pano_10.jpg",
             "hotspots": [
                 {
                     "target": "point_11",
@@ -858,7 +858,7 @@
         {
             "id": "point_2",
             "name": "Cuarto Principal Piscina 01",
-            "image": "/img/tours/carmelita/pano_02.webp",
+            "image": "/img/tours/carmelita/pano_02.jpg",
             "hotspots": [
                 {
                     "target": "point_11",
@@ -896,7 +896,7 @@
         {
             "id": "point_1",
             "name": "Cuarto Principal desde ventana 01",
-            "image": "/img/tours/carmelita/pano_01.webp",
+            "image": "/img/tours/carmelita/pano_01.jpg",
             "hotspots": [
                 {
                     "target": "point_10",
@@ -928,7 +928,7 @@
         {
             "id": "point_4",
             "name": "Baño Cuarto Principal 01",
-            "image": "/img/tours/carmelita/pano_04.webp",
+            "image": "/img/tours/carmelita/pano_04.jpg",
             "hotspots": [
                 {
                     "target": "point_3",
@@ -940,7 +940,7 @@
         {
             "id": "point_3",
             "name": "Vestier Cuarto Principal",
-            "image": "/img/tours/carmelita/pano_03.webp",
+            "image": "/img/tours/carmelita/pano_03.jpg",
             "hotspots": [
                 {
                     "target": "point_4",
@@ -967,7 +967,7 @@
         {
             "id": "point_9",
             "name": "Puerta Cuarto Principal 01",
-            "image": "/img/tours/carmelita/pano_09.webp",
+            "image": "/img/tours/carmelita/pano_09.jpg",
             "hotspots": [
                 {
                     "target": "point_5",
@@ -1009,7 +1009,7 @@
         {
             "id": "point_5",
             "name": "Pasillo ventana 01",
-            "image": "/img/tours/carmelita/pano_05.webp",
+            "image": "/img/tours/carmelita/pano_05.jpg",
             "hotspots": [
                 {
                     "target": "point_18",
@@ -1047,7 +1047,7 @@
         {
             "id": "point_6",
             "name": "Cuarto final doble 01",
-            "image": "/img/tours/carmelita/pano_06.webp",
+            "image": "/img/tours/carmelita/pano_06.jpg",
             "hotspots": [
                 {
                     "target": "point_7",
@@ -1070,7 +1070,7 @@
         {
             "id": "point_7",
             "name": "Vestier Cuarto Final 01",
-            "image": "/img/tours/carmelita/pano_07.webp",
+            "image": "/img/tours/carmelita/pano_07.jpg",
             "hotspots": [
                 {
                     "target": "point_6",
@@ -1088,7 +1088,7 @@
         {
             "id": "point_8",
             "name": "Baño Cuarto Final 01",
-            "image": "/img/tours/carmelita/pano_08.webp",
+            "image": "/img/tours/carmelita/pano_08.jpg",
             "hotspots": [
                 {
                     "target": "point_7",
@@ -1105,7 +1105,7 @@
         {
             "id": "point_20",
             "name": "Baño Invitados",
-            "image": "/img/tours/carmelita/pano_20.webp",
+            "image": "/img/tours/carmelita/pano_20.jpg",
             "hotspots": [
                 {
                     "target": "point_18",
@@ -1122,7 +1122,7 @@
         {
             "id": "point_12",
             "name": "Pasillo Cuna 01",
-            "image": "/img/tours/carmelita/pano_12.webp",
+            "image": "/img/tours/carmelita/pano_12.jpg",
             "hotspots": [
                 {
                     "target": "point_9",
@@ -1149,7 +1149,7 @@
         {
             "id": "point_13",
             "name": "Pasillo Plantas 01",
-            "image": "/img/tours/carmelita/pano_13.webp",
+            "image": "/img/tours/carmelita/pano_13.jpg",
             "hotspots": [
                 {
                     "target": "point_2",
@@ -1196,7 +1196,7 @@
         {
             "id": "point_14",
             "name": "Cuarto 03",
-            "image": "/img/tours/carmelita/pano_14.webp",
+            "image": "/img/tours/carmelita/pano_14.jpg",
             "hotspots": [
                 {
                     "target": "point_13",
@@ -1218,7 +1218,7 @@
         {
             "id": "point_15",
             "name": "Vestie 03",
-            "image": "/img/tours/carmelita/pano_15.webp",
+            "image": "/img/tours/carmelita/pano_15.jpg",
             "hotspots": [
                 {
                     "target": "point_16",
@@ -1236,7 +1236,7 @@
         {
             "id": "point_16",
             "name": "Banno Vestier 03",
-            "image": "/img/tours/carmelita/pano_16.webp",
+            "image": "/img/tours/carmelita/pano_16.jpg",
             "hotspots": [
                 {
                     "target": "point_15",
@@ -1254,7 +1254,7 @@
         {
             "id": "point_19",
             "name": "Pasillo interior 01",
-            "image": "/img/tours/carmelita/pano_19.webp",
+            "image": "/img/tours/carmelita/pano_19.jpg",
             "hotspots": [
                 {
                     "target": "point_18",
@@ -1277,7 +1277,7 @@
         {
             "id": "point_18",
             "name": "Pasillo 02",
-            "image": "/img/tours/carmelita/pano_18.webp",
+            "image": "/img/tours/carmelita/pano_18.jpg",
             "hotspots": [
                 {
                     "target": "point_17",
@@ -1335,7 +1335,7 @@
         {
             "id": "point_17",
             "name": "Pasillo plantas Piedra",
-            "image": "/img/tours/carmelita/pano_17.webp",
+            "image": "/img/tours/carmelita/pano_17.jpg",
             "hotspots": [
                 {
                     "target": "point_5",
@@ -1378,7 +1378,7 @@
         {
             "id": "point_36",
             "name": "Parque 01",
-            "image": "/img/tours/carmelita/pano_36.webp",
+            "image": "/img/tours/carmelita/pano_36.jpg",
             "hotspots": [
                 {
                     "target": "point_11",
@@ -1405,7 +1405,7 @@
         {
             "id": "point_37",
             "name": "Mirador trasero 01",
-            "image": "/img/tours/carmelita/pano_37.webp",
+            "image": "/img/tours/carmelita/pano_37.jpg",
             "hotspots": [
                 {
                     "target": "point_36",

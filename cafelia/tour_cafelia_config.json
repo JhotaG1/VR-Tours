@@ -1,334 +1,1531 @@
 {
     "tour": [
         {
+            "id": "point_36",
+            "name": "Entrada Principal Exterior 01",
+            "image": "/img/tours/cafelia/Cafelia360_36.jpg",
+            "hotspots": [
+                {
+                    "target": "point_1",
+                    "position": "5.00 -0.05 0.00",
+                    "label": "Entrada Interior 01"
+                },
+                {
+                    "target": "point_35",
+                    "position": "2.53 0.07 4.31",
+                    "label": "Prado Terraza piscina 01"
+                },
+                {
+                    "target": "point_52",
+                    "position": "0.44 -0.40 4.96",
+                    "label": "Prado tennis Casa 01"
+                },
+                {
+                    "target": "point_50",
+                    "position": "-3.31 -0.76 3.67",
+                    "label": "Piscina 02"
+                },
+                {
+                    "target": "point_37",
+                    "position": "-3.39 -1.66 3.28",
+                    "label": "Piscina 01"
+                },
+                {
+                    "target": "point_38",
+                    "position": "-4.34 -1.27 2.13",
+                    "label": "Piscina Estalera 01"
+                },
+                {
+                    "target": "point_54",
+                    "position": "-4.05 -1.45 -2.54",
+                    "label": "Prado entre Casa 1 y Casa 2 01"
+                },
+                {
+                    "target": "point_55",
+                    "position": "-0.44 -0.65 -4.94",
+                    "label": "entre garay y entrada 01"
+                },
+                {
+                    "target": "point_53",
+                    "position": "1.85 -0.59 -4.61",
+                    "label": "Parqueadero 01"
+                }
+            ],
+            "initialView": "0 10345.67 0"
+        },
+        {
             "id": "point_1",
-            "name": "Lugar 1 (Cafelia360_01.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_01.webp",
-            "hotspots": []
+            "name": "Entrada Interior 01",
+            "image": "/img/tours/cafelia/Cafelia360_01.jpg",
+            "hotspots": [
+                {
+                    "target": "point_2",
+                    "position": "4.34 2.47 -0.20",
+                    "label": "Wnrada Escaleras 01"
+                },
+                {
+                    "target": "point_3",
+                    "position": "2.36 1.52 4.14",
+                    "label": "Sala Derecha 01"
+                },
+                {
+                    "target": "point_5",
+                    "position": "4.88 1.08 0.06",
+                    "label": "Lugar 5 (Cafelia360_05.jpg)"
+                }
+            ],
+            "initialView": "0 -472.35 0"
         },
         {
             "id": "point_2",
-            "name": "Lugar 2 (Cafelia360_02.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_02.webp",
-            "hotspots": []
+            "name": "Enrada Escaleras 01 ",
+            "image": "/img/tours/cafelia/Cafelia360_02.jpg",
+            "hotspots": [
+                {
+                    "target": "point_5",
+                    "position": "4.97 -0.50 -0.29",
+                    "label": "Comedor 01"
+                },
+                {
+                    "target": "point_3",
+                    "position": "-2.76 -2.59 3.27",
+                    "label": "Sala Derecha 01"
+                },
+                {
+                    "target": "point_1",
+                    "position": "-4.52 -1.15 -1.81",
+                    "label": "Entrada Interior 01"
+                },
+                {
+                    "target": "point_6",
+                    "position": "3.61 -0.93 -3.33",
+                    "label": "Comedor 2"
+                },
+                {
+                    "target": "point_8",
+                    "position": "0.00 -1.10 -4.88",
+                    "label": "Lobby segundo piso 01"
+                },
+                {
+                    "target": "point_4",
+                    "position": "-2.43 -1.50 4.10",
+                    "label": "Sala Terraza 01"
+                }
+            ],
+            "initialView": "0 1010.12 0"
         },
         {
             "id": "point_3",
-            "name": "Lugar 3 (Cafelia360_03.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_03.webp",
-            "hotspots": []
+            "name": "Sala Derecha 01",
+            "image": "/img/tours/cafelia/Cafelia360_03.jpg",
+            "hotspots": [
+                {
+                    "target": "point_1",
+                    "position": "-4.56 -2.04 0.25",
+                    "label": "Entrada Interior 01"
+                },
+                {
+                    "target": "point_2",
+                    "position": "-3.42 -2.57 -2.59",
+                    "label": "Enrada Escaleras 01"
+                },
+                {
+                    "target": "point_5",
+                    "position": "-3.24 -1.76 -3.38",
+                    "label": "Comedor 01"
+                },
+                {
+                    "target": "point_4",
+                    "position": "4.45 -2.09 0.90",
+                    "label": "Sala Terraza 01"
+                },
+                {
+                    "target": "point_8",
+                    "position": "-4.38 -1.38 -1.97",
+                    "label": "Lobby segundo piso 01"
+                }
+            ],
+            "initialView": "0 -445.88 0"
         },
         {
             "id": "point_4",
-            "name": "Lugar 4 (Cafelia360_04.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_04.webp",
-            "hotspots": []
+            "name": "Sala Terraza 01",
+            "image": "/img/tours/cafelia/Cafelia360_04.jpg",
+            "hotspots": [
+                {
+                    "target": "point_3",
+                    "position": "-2.99 -3.98 -0.52",
+                    "label": "Enrada Escaleras 01"
+                },
+                {
+                    "target": "point_1",
+                    "position": "-4.16 -2.78 -0.12",
+                    "label": "Entrada Interior 01"
+                },
+                {
+                    "target": "point_2",
+                    "position": "-3.86 -2.86 -1.38",
+                    "label": "Enrada Escaleras 01"
+                }
+            ],
+            "initialView": "0 497.67 0"
         },
         {
             "id": "point_5",
-            "name": "Lugar 5 (Cafelia360_05.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_05.webp",
-            "hotspots": []
+            "name": "Comedor 01",
+            "image": "/img/tours/cafelia/Cafelia360_05.jpg",
+            "hotspots": [
+                {
+                    "target": "point_2",
+                    "position": "3.73 -3.31 0.38",
+                    "label": "Enrada Escaleras 01"
+                },
+                {
+                    "target": "point_1",
+                    "position": "4.77 -1.40 0.53",
+                    "label": "Entrada Interior 01"
+                },
+                {
+                    "target": "point_3",
+                    "position": "4.18 -2.03 -1.86",
+                    "label": "Sala Derecha 01"
+                },
+                {
+                    "target": "point_6",
+                    "position": "-0.07 -2.10 4.54",
+                    "label": "Comedor 2"
+                }
+            ],
+            "initialView": "0 -549.92 0"
         },
         {
             "id": "point_6",
-            "name": "Lugar 6 (Cafelia360_06.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_06.webp",
-            "hotspots": []
+            "name": "Comedor 2",
+            "image": "/img/tours/cafelia/Cafelia360_06.jpg",
+            "hotspots": [
+                {
+                    "target": "point_7",
+                    "position": "-3.86 -2.94 -1.20",
+                    "label": "Comedor Exterior 01"
+                },
+                {
+                    "target": "point_5",
+                    "position": "4.41 -2.26 -0.68",
+                    "label": "Comedor 01"
+                },
+                {
+                    "target": "point_3",
+                    "position": "4.64 -1.74 0.67",
+                    "label": "Sala Derecha 01"
+                }
+            ],
+            "initialView": "0 1563.60 0"
         },
         {
             "id": "point_7",
-            "name": "Lugar 7 (Cafelia360_07.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_07.webp",
-            "hotspots": []
+            "name": "Comedor Exterior 01",
+            "image": "/img/tours/cafelia/Cafelia360_07.jpg",
+            "hotspots": [
+                {
+                    "target": "point_6",
+                    "position": "3.44 -1.73 3.19",
+                    "label": "Comedor 2"
+                }
+            ],
+            "initialView": "0 1768.72 0"
         },
         {
             "id": "point_8",
-            "name": "Lugar 8 (Cafelia360_08.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_08.webp",
-            "hotspots": []
+            "name": "Lobby segundo piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_08.jpg",
+            "hotspots": [
+                {
+                    "target": "point_9",
+                    "position": "-2.62 -2.45 3.48",
+                    "label": "Lobby segundo piso 02"
+                },
+                {
+                    "target": "point_10",
+                    "position": "-4.31 -2.46 -0.59",
+                    "label": "Lobby segundo piso 03"
+                },
+                {
+                    "target": "point_17",
+                    "position": "2.88 -2.10 3.51",
+                    "label": "Sala Segundo piso 01"
+                },
+                {
+                    "target": "point_16",
+                    "position": "3.38 -3.26 1.70",
+                    "label": "Lobby segundo piso Sala 04"
+                },
+                {
+                    "target": "point_22",
+                    "position": "0.75 -2.45 -4.29",
+                    "label": "Lobby segundopiso cuarto principal 01"
+                },
+                {
+                    "target": "point_2",
+                    "position": "-2.23 -4.34 -1.08",
+                    "label": "Enrada Escaleras 01"
+                },
+                {
+                    "target": "point_18",
+                    "position": "4.28 -2.11 1.49",
+                    "label": "Lobby segundo piso 03"
+                }
+            ],
+            "initialView": "0 3435.91 0"
         },
         {
             "id": "point_9",
-            "name": "Lugar 9 (Cafelia360_09.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_09.webp",
-            "hotspots": []
+            "name": "Lobby segundo piso 02",
+            "image": "/img/tours/cafelia/Cafelia360_09.jpg",
+            "hotspots": [
+                {
+                    "target": "point_10",
+                    "position": "4.65 -1.70 0.71",
+                    "label": "Lobby segundo piso 03"
+                },
+                {
+                    "target": "point_8",
+                    "position": "-1.88 -2.93 3.59",
+                    "label": "Lobby segundo piso 01"
+                },
+                {
+                    "target": "point_16",
+                    "position": "-0.52 -2.32 4.40",
+                    "label": "Lobby segundo piso Sala 04"
+                },
+                {
+                    "target": "point_2",
+                    "position": "2.21 -2.83 3.48",
+                    "label": "Enrada Escaleras 01"
+                },
+                {
+                    "target": "point_10",
+                    "position": "-3.58 -2.91 1.93",
+                    "label": "Lobby segundo piso 03"
+                }
+            ],
+            "initialView": "0 3506.96 0"
         },
         {
             "id": "point_10",
-            "name": "Lugar 10 (Cafelia360_10.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_10.webp",
-            "hotspots": []
+            "name": "Lobby segundo piso 03",
+            "image": "/img/tours/cafelia/Cafelia360_10.jpg",
+            "hotspots": [
+                {
+                    "target": "point_11",
+                    "position": "2.10 -1.98 -4.08",
+                    "label": "Cuarto Segundo piso Izquierda 01"
+                },
+                {
+                    "target": "point_15",
+                    "position": "3.85 -1.84 2.61",
+                    "label": "Baño Cuarto derecha segundo piso 01"
+                },
+                {
+                    "target": "point_9",
+                    "position": "-4.02 -2.94 -0.44",
+                    "label": "Lobby segundo piso 02"
+                },
+                {
+                    "target": "point_8",
+                    "position": "-3.34 -2.91 2.33",
+                    "label": "Lobby segundo piso 01"
+                },
+                {
+                    "target": "point_9",
+                    "position": "-3.81 -2.95 1.34",
+                    "label": "Lobby segundo piso 02"
+                }
+            ],
+            "initialView": "0 3525.64 0"
         },
         {
             "id": "point_11",
-            "name": "Lugar 11 (Cafelia360_11.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_11.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_12",
-            "name": "Lugar 12 (Cafelia360_12.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_12.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_13",
-            "name": "Lugar 13 (Cafelia360_13.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_13.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_14",
-            "name": "Lugar 14 (Cafelia360_14.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_14.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_15",
-            "name": "Lugar 15 (Cafelia360_15.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_15.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_16",
-            "name": "Lugar 16 (Cafelia360_16.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_16.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_17",
-            "name": "Lugar 17 (Cafelia360_17.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_17.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_18",
-            "name": "Lugar 18 (Cafelia360_18.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_18.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_19",
-            "name": "Lugar 19 (Cafelia360_19.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_19.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_20",
-            "name": "Lugar 20 (Cafelia360_20.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_20.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_21",
-            "name": "Lugar 21 (Cafelia360_21.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_21.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_22",
-            "name": "Lugar 22 (Cafelia360_22.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_22.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_23",
-            "name": "Lugar 23 (Cafelia360_23.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_23.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_24",
-            "name": "Lugar 24 (Cafelia360_24.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_24.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_25",
-            "name": "Lugar 25 (Cafelia360_25.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_25.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_26",
-            "name": "Lugar 26 (Cafelia360_26.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_26.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_27",
-            "name": "Lugar 27 (Cafelia360_27.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_27.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_28",
-            "name": "Lugar 28 (Cafelia360_28.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_28.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_29",
-            "name": "Lugar 29 (Cafelia360_29.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_29.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_30",
-            "name": "Lugar 30 (Cafelia360_30.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_30.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_31",
-            "name": "Lugar 31 (Cafelia360_31.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_31.webp",
-            "hotspots": []
-        },
-        {
-            "id": "point_32",
-            "name": "Lugar 32 (Cafelia360_32.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_32.webp",
-            "hotspots": []
+            "name": "Cuarto Segundo piso Izquierda 01",
+            "image": "/img/tours/cafelia/Cafelia360_11.jpg",
+            "hotspots": [
+                {
+                    "target": "point_12",
+                    "position": "4.20 -2.64 0.66",
+                    "label": "Cuarto Segundo piso Izquierda 02"
+                },
+                {
+                    "target": "point_10",
+                    "position": "-1.78 -2.64 3.86",
+                    "label": "Lobby segundo piso 03"
+                },
+                {
+                    "target": "point_13",
+                    "position": "4.56 -1.64 1.24",
+                    "label": "Terraza cuarto segundo piso izquierda 01"
+                },
+                {
+                    "target": "point_33",
+                    "position": "-4.43 -2.14 0.88",
+                    "label": "Baño Cuarto izquiero Segundo piso 01"
+                }
+            ],
+            "initialView": "0 4587.10 0"
         },
         {
             "id": "point_33",
-            "name": "Lugar 33 (Cafelia360_33.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_33.webp",
-            "hotspots": []
+            "name": "Baño Cuarto izquiero Segundo piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_33.jpg",
+            "hotspots": [
+                {
+                    "target": "point_11",
+                    "position": "-3.34 -2.14 3.05",
+                    "label": "Cuarto Segundo piso Izquierda 01"
+                }
+            ],
+            "initialView": "0 4723.35 0"
         },
         {
-            "id": "point_34",
-            "name": "Lugar 34 (Cafelia360_34.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_34.webp",
-            "hotspots": []
+            "id": "point_12",
+            "name": "Cuarto Segundo piso Izquierda 02",
+            "image": "/img/tours/cafelia/Cafelia360_12.jpg",
+            "hotspots": [
+                {
+                    "target": "point_11",
+                    "position": "-3.10 -3.92 -0.23",
+                    "label": "Cuarto Segundo piso Izquierda 01"
+                },
+                {
+                    "target": "point_33",
+                    "position": "-3.98 -2.99 0.42",
+                    "label": "Baño Cuarto izquiero Segundo piso 01"
+                },
+                {
+                    "target": "point_13",
+                    "position": "4.28 -2.47 0.78",
+                    "label": "Terraza cuarto segundo piso izquierda 01"
+                }
+            ],
+            "initialView": "0 4952.65 0"
         },
         {
-            "id": "point_35",
-            "name": "Lugar 35 (Cafelia360_35.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_35.webp",
-            "hotspots": []
+            "id": "point_13",
+            "name": "Terraza cuarto segundo piso izquierda 01",
+            "image": "/img/tours/cafelia/Cafelia360_13.jpg",
+            "hotspots": [
+                {
+                    "target": "point_14",
+                    "position": "-0.28 -2.26 4.45",
+                    "label": "Terraza cuarto derecha segundo piso 01"
+                },
+                {
+                    "target": "point_12",
+                    "position": "-1.82 -4.52 -1.13",
+                    "label": "Cuarto Segundo piso Izquierda 02"
+                },
+                {
+                    "target": "point_11",
+                    "position": "-4.10 -2.67 -1.01",
+                    "label": "Cuarto Segundo piso Izquierda 01"
+                }
+            ],
+            "initialView": "0 4923.43 0"
         },
         {
-            "id": "point_36",
-            "name": "Lugar 36 (Cafelia360_36.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_36.webp",
-            "hotspots": []
+            "id": "point_14",
+            "name": "Terraza cuarto derecha segundo piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_14.jpg",
+            "hotspots": [
+                {
+                    "target": "point_13",
+                    "position": "1.00 -2.31 -4.32",
+                    "label": "Terraza cuarto segundo piso izquierda 01"
+                },
+                {
+                    "target": "point_15",
+                    "position": "-4.24 -2.43 -1.04",
+                    "label": "Baño vestier cuarto sala segundo piso 01"
+                }
+            ],
+            "initialView": "0 5144.82 0"
         },
         {
-            "id": "point_37",
-            "name": "Lugar 37 (Cafelia360_37.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_37.webp",
-            "hotspots": []
+            "id": "point_15",
+            "name": "Baño Cuarto derecha segundo piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_15.jpg",
+            "hotspots": [
+                {
+                    "target": "point_10",
+                    "position": "-1.75 3.82 -2.72",
+                    "label": "Lobby segundo piso 03"
+                }
+            ],
+            "initialView": "0 5282.56 0"
         },
         {
-            "id": "point_38",
-            "name": "Lugar 38 (Cafelia360_38.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_38.webp",
-            "hotspots": []
+            "id": "point_16",
+            "name": "Lobby segundo piso Sala 04",
+            "image": "/img/tours/cafelia/Cafelia360_16.jpg",
+            "hotspots": [
+                {
+                    "target": "point_9",
+                    "position": "-2.73 -3.43 2.40",
+                    "label": "Lobby segundo piso 02"
+                },
+                {
+                    "target": "point_10",
+                    "position": "-3.87 -2.89 1.29",
+                    "label": "Lobby segundo piso 03"
+                },
+                {
+                    "target": "point_8",
+                    "position": "-1.93 -4.61 -0.13",
+                    "label": "Lobby segundo piso 01"
+                },
+                {
+                    "target": "point_22",
+                    "position": "-2.75 -2.98 -2.93",
+                    "label": "Lobby segundopiso cuarto principal 01"
+                },
+                {
+                    "target": "point_2",
+                    "position": "-3.83 -3.21 -0.19",
+                    "label": "Enrada Escaleras 01"
+                },
+                {
+                    "target": "point_17",
+                    "position": "1.65 -2.95 3.69",
+                    "label": "Sala Segundo piso 01"
+                },
+                {
+                    "target": "point_18",
+                    "position": "4.28 -2.50 -0.64",
+                    "label": "Cuarto Sala Segundo Piso 02"
+                }
+            ],
+            "initialView": "0 5653.95 0"
         },
         {
-            "id": "point_39",
-            "name": "Lugar 39 (Cafelia360_39.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_39.webp",
-            "hotspots": []
+            "id": "point_17",
+            "name": "Sala Segundo piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_17.jpg",
+            "hotspots": [
+                {
+                    "target": "point_16",
+                    "position": "-1.27 -2.97 -3.82",
+                    "label": "Lobby segundo piso Sala 04"
+                },
+                {
+                    "target": "point_8",
+                    "position": "-3.49 -2.40 -2.66",
+                    "label": "Lobby segundo piso 01"
+                }
+            ]
         },
         {
-            "id": "point_40",
-            "name": "Lugar 40 (Cafelia360_40.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_40.webp",
-            "hotspots": []
+            "id": "point_18",
+            "name": "Cuarto Sala Segundo Piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_18.jpg",
+            "hotspots": [
+                {
+                    "target": "point_19",
+                    "position": "4.45 -2.16 0.73",
+                    "label": "Cuarto Sala Segundo Piso 02"
+                },
+                {
+                    "target": "point_16",
+                    "position": "-3.92 -3.08 -0.29",
+                    "label": "Lobby segundo piso Sala 04"
+                }
+            ],
+            "initialView": "0 5675.38 0"
         },
         {
-            "id": "point_41",
-            "name": "Lugar 41 (Cafelia360_41.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_41.webp",
-            "hotspots": []
+            "id": "point_19",
+            "name": "Cuarto Sala Segundo Piso 02",
+            "image": "/img/tours/cafelia/Cafelia360_19.jpg",
+            "hotspots": [
+                {
+                    "target": "point_21",
+                    "position": "-3.65 -2.98 -1.66",
+                    "label": "Baño vestier cuarto sala segundo piso 01"
+                },
+                {
+                    "target": "point_20",
+                    "position": "4.52 -2.13 0.21",
+                    "label": "Tarraza cuarto sala 01"
+                },
+                {
+                    "target": "point_16",
+                    "position": "-0.74 -1.68 4.65",
+                    "label": "Lobby segundo piso Sala 04"
+                }
+            ],
+            "initialView": "0 5565.37 0"
         },
         {
-            "id": "point_42",
-            "name": "Lugar 42 (Cafelia360_42.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_42.webp",
-            "hotspots": []
+            "id": "point_20",
+            "name": "Tarraza cuarto sala 01",
+            "image": "/img/tours/cafelia/Cafelia360_20.jpg",
+            "hotspots": [
+                {
+                    "target": "point_12",
+                    "position": "-4.24 -2.39 1.13",
+                    "label": "Cuarto Segundo piso Izquierda 02"
+                }
+            ],
+            "initialView": "0 5715.94 0"
         },
         {
-            "id": "point_43",
-            "name": "Lugar 43 (Cafelia360_43.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_43.webp",
-            "hotspots": []
+            "id": "point_21",
+            "name": "Baño vestier cuarto sala segundo piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_21.jpg",
+            "hotspots": [
+                {
+                    "target": "point_19",
+                    "position": "-2.20 -3.09 -3.25",
+                    "label": "Cuarto Sala Segundo Piso 02"
+                }
+            ],
+            "initialView": "0 1684.27 0"
         },
         {
-            "id": "point_44",
-            "name": "Lugar 44 (Cafelia360_44.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_44.webp",
-            "hotspots": []
+            "id": "point_22",
+            "name": "Lobby segundopiso cuarto principal 01",
+            "image": "/img/tours/cafelia/Cafelia360_22.jpg",
+            "hotspots": [
+                {
+                    "target": "point_12",
+                    "position": "-3.75 -3.25 -0.64",
+                    "label": "Cuarto Segundo piso Izquierda 02"
+                },
+                {
+                    "target": "point_8",
+                    "position": "-2.38 -4.37 -0.53",
+                    "label": "Lobby segundo piso 01"
+                },
+                {
+                    "target": "point_16",
+                    "position": "-2.60 -3.81 1.93",
+                    "label": "Lobby segundo piso Sala 04"
+                },
+                {
+                    "target": "point_10",
+                    "position": "-2.29 -3.05 -3.24",
+                    "label": "Lobby segundo piso 03"
+                },
+                {
+                    "target": "point_17",
+                    "position": "-3.64 -2.67 2.15",
+                    "label": "Sala Segundo piso 01"
+                },
+                {
+                    "target": "point_18",
+                    "position": "-2.72 -2.58 3.31",
+                    "label": "Cuarto Sala Segundo Piso 01"
+                },
+                {
+                    "target": "point_23",
+                    "position": "4.53 -1.97 -0.78",
+                    "label": "Cuarto principal segundo piso 01"
+                }
+            ],
+            "initialView": "0 5677.10 0"
+        },
+        {
+            "id": "point_23",
+            "name": "Entrada Cuarto Principal Segundo piso 01",
+            "image": "/img/tours/cafelia/Cafelia360_23.jpg",
+            "hotspots": [
+                {
+                    "target": "point_22",
+                    "position": "-1.78 -4.67 -0.12",
+                    "label": "Lobby segundopiso cuarto principal 01"
+                },
+                {
+                    "target": "point_8",
+                    "position": "-2.77 -4.15 -0.33",
+                    "label": "Lobby segundo piso 01"
+                },
+                {
+                    "target": "point_16",
+                    "position": "-3.65 -3.17 1.28",
+                    "label": "Lobby segundo piso Sala 04"
+                },
+                {
+                    "target": "point_24",
+                    "position": "0.13 -2.62 -4.26",
+                    "label": "Entrada Cuarto principal segundo piso 02"
+                }
+            ],
+            "initialView": "0 2154.89 0"
+        },
+        {
+            "id": "point_24",
+            "name": "Entrada Cuarto principal segundo piso 02",
+            "image": "/img/tours/cafelia/Cafelia360_24.jpg",
+            "hotspots": [
+                {
+                    "target": "point_23",
+                    "position": "-0.78 -1.64 4.66",
+                    "label": "Entrada Cuarto Principal Segundo piso 02"
+                },
+                {
+                    "target": "point_25",
+                    "position": "4.42 -2.22 0.72",
+                    "label": "Entrada Baño principal 01"
+                },
+                {
+                    "target": "point_28",
+                    "position": "3.89 -1.82 2.57",
+                    "label": "Cuarto Principal Tv Cama 01"
+                }
+            ],
+            "initialView": "0 5664.03 0"
+        },
+        {
+            "id": "point_25",
+            "name": "Entrada Baño principal 01",
+            "image": "/img/tours/cafelia/Cafelia360_25.jpg",
+            "hotspots": [
+                {
+                    "target": "point_26",
+                    "position": "0.64 -2.60 -4.22",
+                    "label": "Baño principal 01"
+                },
+                {
+                    "target": "point_23",
+                    "position": "-4.55 -2.05 -0.25",
+                    "label": "Entrada Cuarto Principal Segundo piso 02"
+                },
+                {
+                    "target": "point_29",
+                    "position": "1.05 -1.52 4.65",
+                    "label": "Entrada Vestier Principal 01"
+                },
+                {
+                    "target": "point_28",
+                    "position": "1.95 -2.90 3.58",
+                    "label": "Cuarto Principal Tv Cama 01"
+                },
+                {
+                    "target": "point_23",
+                    "position": "-1.65 -1.83 4.35",
+                    "label": "Entrada Cuarto Principal Segundo piso 02"
+                },
+                {
+                    "target": "point_30",
+                    "position": "4.03 -1.84 2.32",
+                    "label": "Terraza Cuarto Principal 01"
+                }
+            ],
+            "initialView": "0 6326.94 0"
         },
         {
             "id": "point_45",
-            "name": "Lugar 45 (Cafelia360_45.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_45.webp",
-            "hotspots": []
+            "name": "Entrada Casa 01",
+            "image": "/img/tours/cafelia/Cafelia360_45.jpg",
+            "hotspots": [
+                {
+                    "target": "point_37",
+                    "position": "2.07 -2.20 3.99",
+                    "label": "Piscina 01"
+                },
+                {
+                    "target": "point_50",
+                    "position": "0.99 -1.64 4.62",
+                    "label": "Piscina 02"
+                },
+                {
+                    "target": "point_40",
+                    "position": "-3.68 -1.77 2.88",
+                    "label": "Zotano de juego Casa 2 01"
+                },
+                {
+                    "target": "point_46",
+                    "position": "-4.43 -2.18 -0.77",
+                    "label": "Comerdor Casa 2 01"
+                },
+                {
+                    "target": "point_47",
+                    "position": "-3.02 -2.82 2.81",
+                    "label": "Lobby Cocina casa 2  01"
+                },
+                {
+                    "target": "point_49",
+                    "position": "-2.30 -1.58 4.15",
+                    "label": "Cuarto Congelador 01"
+                }
+            ],
+            "initialView": "0 16977.89 0"
         },
         {
-            "id": "point_46",
-            "name": "Lugar 46 (Cafelia360_46.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_46.webp",
-            "hotspots": []
+            "id": "point_26",
+            "name": "Baño principal 01",
+            "image": "/img/tours/cafelia/Cafelia360_26.jpg",
+            "hotspots": [
+                {
+                    "target": "point_27",
+                    "position": "2.23 -2.05 -3.98",
+                    "label": "baño principal 02"
+                },
+                {
+                    "target": "point_25",
+                    "position": "0.15 -1.95 4.60",
+                    "label": "Entrada Baño principal 01"
+                }
+            ],
+            "initialView": "0 6416.55 0"
         },
         {
-            "id": "point_47",
-            "name": "Lugar 47 (Cafelia360_47.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_47.webp",
-            "hotspots": []
+            "id": "point_27",
+            "name": "baño principal 02",
+            "image": "/img/tours/cafelia/Cafelia360_27.jpg",
+            "hotspots": [
+                {
+                    "target": "point_26",
+                    "position": "-2.25 -2.25 3.86",
+                    "label": "Baño principal 01"
+                }
+            ],
+            "initialView": "0 6837.68 0"
         },
         {
-            "id": "point_48",
-            "name": "Lugar 48 (Cafelia360_48.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_48.webp",
-            "hotspots": []
+            "id": "point_28",
+            "name": "Cuarto Principal Tv Cama 01",
+            "image": "/img/tours/cafelia/Cafelia360_28.jpg",
+            "hotspots": [
+                {
+                    "target": "point_25",
+                    "position": "-2.41 -4.22 1.15",
+                    "label": "Entrada Baño principal 01"
+                },
+                {
+                    "target": "point_23",
+                    "position": "-2.64 -2.95 3.06",
+                    "label": "Entrada Cuarto Principal Segundo piso 02"
+                },
+                {
+                    "target": "point_26",
+                    "position": "-4.13 -2.63 1.01",
+                    "label": "Baño principal 01"
+                },
+                {
+                    "target": "point_23",
+                    "position": "2.36 -1.83 4.01",
+                    "label": "Entrada Cuarto Principal Segundo piso 02"
+                }
+            ],
+            "initialView": "0 5648.79 0"
         },
         {
-            "id": "point_49",
-            "name": "Lugar 49 (Cafelia360_49.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_49.webp",
-            "hotspots": []
+            "id": "point_29",
+            "name": "Entrada Vestier Principal 01",
+            "image": "/img/tours/cafelia/Cafelia360_29.jpg",
+            "hotspots": [
+                {
+                    "target": "point_23",
+                    "position": "-0.41 -2.15 4.50",
+                    "label": "Terraza cuarto segundo piso izquierda 01"
+                },
+                {
+                    "target": "point_25",
+                    "position": "-2.72 -4.18 0.36",
+                    "label": "Entrada Baño principal 01"
+                },
+                {
+                    "target": "point_28",
+                    "position": "-4.07 -2.79 0.78",
+                    "label": "Cuarto Principal Tv Cama 01"
+                },
+                {
+                    "target": "point_30",
+                    "position": "-2.27 -2.88 -3.40",
+                    "label": "Terraza Cuarto Principal 01"
+                },
+                {
+                    "target": "point_24",
+                    "position": "-3.58 -2.55 2.39",
+                    "label": "Entrada Cuarto principal segundo piso 02"
+                },
+                {
+                    "target": "point_31",
+                    "position": "4.55 -2.06 -0.26",
+                    "label": "Vestier Principal 01"
+                }
+            ],
+            "initialView": "0 7113.61 0"
+        },
+        {
+            "id": "point_30",
+            "name": "Terraza Cuarto Principal 01",
+            "image": "/img/tours/cafelia/Cafelia360_30.jpg",
+            "hotspots": [
+                {
+                    "target": "point_29",
+                    "position": "-3.54 -2.86 2.08",
+                    "label": "Entrada Vestier Principal 01"
+                },
+                {
+                    "target": "point_32",
+                    "position": "-4.29 -2.49 0.64",
+                    "label": "Salida Entrada Cuarto Principal 01"
+                }
+            ],
+            "initialView": "0 7458.08 0"
+        },
+        {
+            "id": "point_31",
+            "name": "Vestier Principal 01",
+            "image": "/img/tours/cafelia/Cafelia360_31.jpg",
+            "hotspots": [
+                {
+                    "target": "point_29",
+                    "position": "-4.19 -2.71 -0.38",
+                    "label": "Entrada Vestier Principal 01"
+                }
+            ],
+            "initialView": "0 7827.86 0"
+        },
+        {
+            "id": "point_32",
+            "name": "Salida Entrada Cuarto Principal 01",
+            "image": "/img/tours/cafelia/Cafelia360_32.jpg",
+            "hotspots": [
+                {
+                    "target": "point_30",
+                    "position": "4.49 -2.16 -0.39",
+                    "label": "Terraza Cuarto Principal 01"
+                },
+                {
+                    "target": "point_29",
+                    "position": "4.51 -2.03 0.74",
+                    "label": "Entrada Vestier Principal 01"
+                },
+                {
+                    "target": "point_24",
+                    "position": "-0.17 -3.05 -3.96",
+                    "label": "Entrada Cuarto principal segundo piso 02"
+                },
+                {
+                    "target": "point_22",
+                    "position": "-2.57 -2.62 -3.40",
+                    "label": "Lobby segundopiso cuarto principal 01"
+                },
+                {
+                    "target": "point_23",
+                    "position": "0.02 -4.40 -2.38",
+                    "label": "Entrada Cuarto Principal Segundo piso 01"
+                },
+                {
+                    "target": "point_28",
+                    "position": "3.90 -2.48 -1.91",
+                    "label": "Cuarto Principal Tv Cama 01"
+                }
+            ],
+            "initialView": "0 8264.00 0"
+        },
+        {
+            "id": "point_34",
+            "name": "Terraza trasera Sala 01",
+            "image": "/img/tours/cafelia/Cafelia360_34.jpg",
+            "hotspots": [
+                {
+                    "target": "point_4",
+                    "position": "-4.20 -2.67 -0.51",
+                    "label": "Sala Terraza 01"
+                }
+            ],
+            "initialView": "0 8496.62 0"
+        },
+        {
+            "id": "point_35",
+            "name": "Prado Terraza piscina 01",
+            "image": "/img/tours/cafelia/Cafelia360_35.jpg",
+            "hotspots": [
+                {
+                    "target": "point_36",
+                    "position": "2.04 2.13 4.04",
+                    "label": "Entrada Principal Exterior 01"
+                },
+                {
+                    "target": "point_37",
+                    "position": "4.26 1.86 1.86",
+                    "label": "Piscina 01"
+                },
+                {
+                    "target": "point_38",
+                    "position": "4.53 2.01 0.66",
+                    "label": "Piscina Estalera 01"
+                },
+                {
+                    "target": "point_50",
+                    "position": "4.42 2.09 -1.05",
+                    "label": "Piscina 02"
+                },
+                {
+                    "target": "point_52",
+                    "position": "-0.11 0.44 -4.98",
+                    "label": "Prado tennis Casa 01"
+                },
+                {
+                    "target": "point_51",
+                    "position": "1.89 1.59 -4.35",
+                    "label": "Cancha de tennis 01"
+                },
+                {
+                    "target": "point_34",
+                    "position": "-3.96 0.50 3.01",
+                    "label": "Terraza trasera Sala 01"
+                },
+                {
+                    "target": "point_54",
+                    "position": "3.55 2.14 2.80",
+                    "label": "Prado entre Casa 1 y Casa 2 01"
+                },
+                {
+                    "target": "point_4",
+                    "position": "-1.88 1.59 4.35",
+                    "label": "Sala Terraza 01"
+                }
+            ],
+            "initialView": "0 8617.63 0"
+        },
+        {
+            "id": "point_37",
+            "name": "Piscina 01",
+            "image": "/img/tours/cafelia/Cafelia360_37.jpg",
+            "hotspots": [
+                {
+                    "target": "point_36",
+                    "position": "3.15 -0.74 3.82",
+                    "label": "Entrada Principal Exterior 01"
+                },
+                {
+                    "target": "point_53",
+                    "position": "4.55 -0.05 2.07",
+                    "label": "Parqueadero 01"
+                },
+                {
+                    "target": "point_54",
+                    "position": "4.03 -0.12 -2.95",
+                    "label": "Prado entre Casa 1 y Casa 2 01"
+                },
+                {
+                    "target": "point_38",
+                    "position": "-0.68 -1.66 -4.67",
+                    "label": "Piscina Estalera 01"
+                },
+                {
+                    "target": "point_50",
+                    "position": "-3.77 -1.47 -2.93",
+                    "label": "Piscina 02"
+                },
+                {
+                    "target": "point_34",
+                    "position": "-1.26 -0.54 4.81",
+                    "label": "Terraza Cuarto Principal 01"
+                },
+                {
+                    "target": "point_35",
+                    "position": "-2.73 -1.01 4.07",
+                    "label": "Prado Terraza piscina 01"
+                },
+                {
+                    "target": "point_52",
+                    "position": "-4.53 -0.95 1.88",
+                    "label": "Prado tennis Casa 01"
+                },
+                {
+                    "target": "point_51",
+                    "position": "-4.95 -0.60 -0.32",
+                    "label": "Cancha de tennis 01"
+                }
+            ],
+            "initialView": "0 11203.39 0"
         },
         {
             "id": "point_50",
-            "name": "Lugar 50 (Cafelia360_50.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_50.webp",
-            "hotspots": []
+            "name": "Piscina 02",
+            "image": "/img/tours/cafelia/Cafelia360_50.jpg",
+            "hotspots": [
+                {
+                    "target": "point_38",
+                    "position": "-3.99 -2.01 2.24",
+                    "label": "Piscina Estalera 01"
+                },
+                {
+                    "target": "point_37",
+                    "position": "-4.58 -2.01 -0.16",
+                    "label": "Piscina 01"
+                },
+                {
+                    "target": "point_36",
+                    "position": "-4.33 -1.40 -2.08",
+                    "label": "Entrada Principal Exterior 01"
+                },
+                {
+                    "target": "point_34",
+                    "position": "-2.65 -1.66 -3.90",
+                    "label": "Terraza trasera Sala 01"
+                },
+                {
+                    "target": "point_35",
+                    "position": "-0.54 -1.69 -4.67",
+                    "label": "Prado Terraza piscina 01"
+                },
+                {
+                    "target": "point_51",
+                    "position": "3.29 -1.63 3.39",
+                    "label": "Cancha de tennis 01"
+                },
+                {
+                    "target": "point_52",
+                    "position": "2.13 -1.48 -4.28",
+                    "label": "Prado tennis Casa 01"
+                },
+                {
+                    "target": "point_45",
+                    "position": "-4.39 -1.20 2.08",
+                    "label": "Entrada Casa 01"
+                }
+            ],
+            "initialView": "0 11437.96 0"
+        },
+        {
+            "id": "point_38",
+            "name": "Piscina Estalera 01",
+            "image": "/img/tours/cafelia/Cafelia360_38.jpg",
+            "hotspots": [
+                {
+                    "target": "point_50",
+                    "position": "-1.87 -0.15 4.63",
+                    "label": "Piscina 02"
+                },
+                {
+                    "target": "point_45",
+                    "position": "-2.04 -0.05 -4.56",
+                    "label": "Entrada Casa 01"
+                },
+                {
+                    "target": "point_37",
+                    "position": "4.85 0.83 0.86",
+                    "label": "Piscina 01"
+                },
+                {
+                    "target": "point_36",
+                    "position": "4.82 1.32 -0.15",
+                    "label": "Entrada Principal Exterior 01"
+                },
+                {
+                    "target": "point_34",
+                    "position": "3.82 1.70 2.74",
+                    "label": "Terraza trasera Sala 01"
+                },
+                {
+                    "target": "point_35",
+                    "position": "3.21 1.55 3.50",
+                    "label": "Prado Terraza piscina 01"
+                },
+                {
+                    "target": "point_35",
+                    "position": "0.87 1.35 4.73",
+                    "label": "Prado Terraza piscina 01"
+                },
+                {
+                    "target": "point_51",
+                    "position": "-1.61 1.05 4.62",
+                    "label": "Cancha de tennis 01"
+                }
+            ],
+            "initialView": "0 12302.09 0"
+        },
+        {
+            "id": "point_39",
+            "name": "Zotano de juego Casa 2 01",
+            "image": "/img/tours/cafelia/Cafelia360_39.jpg",
+            "hotspots": [
+                {
+                    "target": "point_44",
+                    "position": "3.79 0.85 -3.15",
+                    "label": "Corredor cuartos casa 2 01"
+                },
+                {
+                    "target": "point_47",
+                    "position": "4.54 1.11 1.78",
+                    "label": "Lobby Cocina casa 2  01"
+                },
+                {
+                    "target": "point_40",
+                    "position": "0.42 0.56 -4.95",
+                    "label": "Zotano sala juego 01"
+                }
+            ]
+        },
+        {
+            "id": "point_40",
+            "name": "Zotano sala juego 01",
+            "image": "/img/tours/cafelia/Cafelia360_40.jpg",
+            "hotspots": [
+                {
+                    "target": "point_44",
+                    "position": "4.94 0.67 0.43",
+                    "label": "Corredor cuartos casa 2 01"
+                },
+                {
+                    "target": "point_39",
+                    "position": "-1.29 0.22 4.82",
+                    "label": "Zotano de juego Casa 2 01"
+                },
+                {
+                    "target": "point_47",
+                    "position": "2.55 0.47 4.27",
+                    "label": "Lobby Cocina casa 2  01"
+                }
+            ],
+            "initialView": "0 12631.66 0"
+        },
+        {
+            "id": "point_41",
+            "name": "Cuarto Secundario casa 2 01",
+            "image": "/img/tours/cafelia/Cafelia360_41.jpg",
+            "hotspots": [
+                {
+                    "target": "point_44",
+                    "position": "-1.40 -4.60 -1.39",
+                    "label": "Corredor cuartos casa 2 01"
+                },
+                {
+                    "target": "point_43",
+                    "position": "-4.24 -2.62 -0.38",
+                    "label": "Baño Casa 2 zotano 01"
+                },
+                {
+                    "target": "point_40",
+                    "position": "-3.06 -2.44 -3.11",
+                    "label": "Zotano sala juego 01"
+                }
+            ]
+        },
+        {
+            "id": "point_42",
+            "name": "Cuarto Principal Casa 2 01",
+            "image": "/img/tours/cafelia/Cafelia360_42.jpg",
+            "hotspots": [
+                {
+                    "target": "point_44",
+                    "position": "-2.80 -4.13 -0.33",
+                    "label": "Corredor cuartos casa 2 01"
+                },
+                {
+                    "target": "point_43",
+                    "position": "-4.66 -1.67 -0.71",
+                    "label": "Baño Casa 2 zotano 01"
+                },
+                {
+                    "target": "point_41",
+                    "position": "-4.85 -0.94 0.75",
+                    "label": "Cuarto Secundario casa 2 01"
+                }
+            ],
+            "initialView": "0 12889.14 0"
+        },
+        {
+            "id": "point_43",
+            "name": "Baño Casa 2 zotano 01",
+            "image": "/img/tours/cafelia/Cafelia360_43.jpg",
+            "hotspots": [
+                {
+                    "target": "point_41",
+                    "position": "-2.75 -3.28 -2.59",
+                    "label": "Cuarto Secundario casa 2 01"
+                },
+                {
+                    "target": "point_44",
+                    "position": "-0.87 -4.92 0.21",
+                    "label": "Corredor cuartos casa 2 01"
+                },
+                {
+                    "target": "point_42",
+                    "position": "-4.02 -2.96 0.32",
+                    "label": "Cuarto Principal Casa 2 01"
+                },
+                {
+                    "target": "point_40",
+                    "position": "-2.13 -2.76 3.58",
+                    "label": "Zotano sala juego 01"
+                }
+            ],
+            "initialView": "0 13209.54 0"
+        },
+        {
+            "id": "point_44",
+            "name": "Corredor cuartos casa 2 01",
+            "image": "/img/tours/cafelia/Cafelia360_44.jpg",
+            "hotspots": [
+                {
+                    "target": "point_40",
+                    "position": "-4.16 -2.76 -0.25",
+                    "label": "Zotano sala juego 01"
+                },
+                {
+                    "target": "point_43",
+                    "position": "0.65 -2.59 4.23",
+                    "label": "Baño Casa 2 zotano 01"
+                },
+                {
+                    "target": "point_42",
+                    "position": "1.49 -2.18 -4.25",
+                    "label": "Cuarto Principal Casa 2 01"
+                },
+                {
+                    "target": "point_41",
+                    "position": "4.30 -2.33 1.04",
+                    "label": "Cuarto Secundario casa 2 01"
+                }
+            ],
+            "initialView": "0 13620.01 0"
+        },
+        {
+            "id": "point_46",
+            "name": "Comerdor Casa 2 01",
+            "image": "/img/tours/cafelia/Cafelia360_46.jpg",
+            "hotspots": [
+                {
+                    "target": "point_47",
+                    "position": "-0.81 -3.08 3.86",
+                    "label": "Lobby Cocina casa 2  01"
+                },
+                {
+                    "target": "point_49",
+                    "position": "0.34 -2.22 4.47",
+                    "label": "Lobby segundopiso cuarto principal 01"
+                },
+                {
+                    "target": "point_48",
+                    "position": "-1.52 -2.29 4.18",
+                    "label": "Cuarto Mirador 01"
+                },
+                {
+                    "target": "point_40",
+                    "position": "1.22 -2.74 4.00",
+                    "label": "Zotano sala juego 01"
+                },
+                {
+                    "target": "point_45",
+                    "position": "4.39 -2.15 1.05",
+                    "label": "Entrada Casa 01"
+                }
+            ],
+            "initialView": "0 9442.57 0"
+        },
+        {
+            "id": "point_47",
+            "name": "Lobby Cocina casa 2  01",
+            "image": "/img/tours/cafelia/Cafelia360_47.jpg",
+            "hotspots": [
+                {
+                    "target": "point_48",
+                    "position": "-2.66 -2.63 -3.31",
+                    "label": "Cuarto Mirador 01"
+                },
+                {
+                    "target": "point_49",
+                    "position": "-3.06 -2.67 2.91",
+                    "label": "Cuarto Congelador 01"
+                },
+                {
+                    "target": "point_39",
+                    "position": "1.39 -3.11 3.66",
+                    "label": "Zotano de juego Casa 2 01"
+                },
+                {
+                    "target": "point_46",
+                    "position": "4.66 -1.62 -0.83",
+                    "label": "Comerdor Casa 2 01"
+                },
+                {
+                    "target": "point_45",
+                    "position": "3.35 -1.88 3.20",
+                    "label": "Entrada Casa 01"
+                }
+            ],
+            "initialView": "0 15206.30 0"
+        },
+        {
+            "id": "point_48",
+            "name": "Cuarto Mirador 01",
+            "image": "/img/tours/cafelia/Cafelia360_48.jpg",
+            "hotspots": [
+                {
+                    "target": "point_47",
+                    "position": "4.49 -0.23 2.19",
+                    "label": "Lobby Cocina casa 2  01"
+                }
+            ],
+            "initialView": "0 9094.44 0"
+        },
+        {
+            "id": "point_49",
+            "name": "Cuarto Congelador 01",
+            "image": "/img/tours/cafelia/Cafelia360_49.jpg",
+            "hotspots": [
+                {
+                    "target": "point_46",
+                    "position": "4.49 -0.03 -2.19",
+                    "label": "Comerdor Casa 2 01"
+                },
+                {
+                    "target": "point_45",
+                    "position": "4.77 0.37 1.46",
+                    "label": "Entrada Casa 01"
+                },
+                {
+                    "target": "point_40",
+                    "position": "4.98 -0.40 0.03",
+                    "label": "Zotano de juego Casa 2 01"
+                },
+                {
+                    "target": "point_50",
+                    "position": "-3.38 -1.37 3.42",
+                    "label": "Piscina 02"
+                }
+            ],
+            "initialView": "0 9122.52 0"
         },
         {
             "id": "point_51",
-            "name": "Lugar 51 (Cafelia360_51.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_51.webp",
-            "hotspots": []
+            "name": "Cancha de tennis 01",
+            "image": "/img/tours/cafelia/Cafelia360_51.jpg",
+            "hotspots": [
+                {
+                    "target": "point_52",
+                    "position": "4.33 2.03 1.44",
+                    "label": "Prado tennis Casa 01"
+                },
+                {
+                    "target": "point_50",
+                    "position": "4.61 1.26 -1.46",
+                    "label": "Piscina 02"
+                }
+            ],
+            "initialView": "0 16668.37 0"
         },
         {
             "id": "point_52",
-            "name": "Lugar 52 (Cafelia360_52.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_52.webp",
-            "hotspots": []
+            "name": "Prado tennis Casa 01",
+            "image": "/img/tours/cafelia/Cafelia360_52.jpg",
+            "hotspots": [
+                {
+                    "target": "point_35",
+                    "position": "-0.09 3.54 3.53",
+                    "label": "Prado entre Casa 1 y Casa 2 01"
+                },
+                {
+                    "target": "point_34",
+                    "position": "-1.32 3.31 3.51",
+                    "label": "Terraza trasera Sala 01"
+                },
+                {
+                    "target": "point_51",
+                    "position": "3.00 3.58 -1.78",
+                    "label": "Cancha de tennis 01"
+                },
+                {
+                    "target": "point_37",
+                    "position": "1.91 3.73 2.73",
+                    "label": "Piscina 01"
+                }
+            ],
+            "initialView": "0 17115.97 0"
         },
         {
             "id": "point_53",
-            "name": "Lugar 53 (Cafelia360_53.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_53.webp",
-            "hotspots": []
+            "name": "Parqueadero 01",
+            "image": "/img/tours/cafelia/Cafelia360_53.jpg",
+            "hotspots": [
+                {
+                    "target": "point_54",
+                    "position": "-4.24 0.53 2.60",
+                    "label": "Prado entre Casa 1 y Casa 2 01"
+                },
+                {
+                    "target": "point_55",
+                    "position": "-3.95 0.37 -3.04",
+                    "label": "entre garay y entrada 01"
+                },
+                {
+                    "target": "point_36",
+                    "position": "0.19 1.46 4.78",
+                    "label": "Entrada Principal Exterior 01"
+                }
+            ],
+            "initialView": "0 17072.08 0"
         },
         {
             "id": "point_54",
-            "name": "Lugar 54 (Cafelia360_54.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_54.webp",
-            "hotspots": []
+            "name": "Prado entre Casa 1 y Casa 2 01",
+            "image": "/img/tours/cafelia/Cafelia360_54.jpg",
+            "hotspots": [
+                {
+                    "target": "point_55",
+                    "position": "3.96 1.88 -2.40",
+                    "label": "entre garay y entrada 01"
+                },
+                {
+                    "target": "point_53",
+                    "position": "3.36 2.22 2.96",
+                    "label": "Parqueadero 01"
+                },
+                {
+                    "target": "point_36",
+                    "position": "1.83 2.13 4.14",
+                    "label": "Entrada Principal Exterior 01"
+                },
+                {
+                    "target": "point_37",
+                    "position": "-0.97 1.71 4.60",
+                    "label": "Piscina 01"
+                },
+                {
+                    "target": "point_34",
+                    "position": "0.17 1.68 4.71",
+                    "label": "Terraza trasera Sala 01"
+                },
+                {
+                    "target": "point_45",
+                    "position": "-4.22 1.41 2.29",
+                    "label": "Entrada Casa 01"
+                }
+            ],
+            "initialView": "0 9420.69 0"
         },
         {
             "id": "point_55",
-            "name": "Lugar 55 (Cafelia360_55.webp)",
-            "image": "/img/tours/cafelia/Cafelia360_55.webp",
-            "hotspots": []
+            "name": "entre garay y entrada 01",
+            "image": "/img/tours/cafelia/Cafelia360_55.jpg",
+            "hotspots": [
+                {
+                    "target": "point_53",
+                    "position": "3.67 2.89 -1.79",
+                    "label": "Parqueadero 01"
+                },
+                {
+                    "target": "point_36",
+                    "position": "3.98 3.01 -0.28",
+                    "label": "Entrada Principal Exterior 01"
+                },
+                {
+                    "target": "point_37",
+                    "position": "3.98 2.94 0.70",
+                    "label": "Piscina 01"
+                },
+                {
+                    "target": "point_54",
+                    "position": "2.98 2.51 3.13",
+                    "label": "Prado entre Casa 1 y Casa 2 01"
+                }
+            ],
+            "initialView": "0 16840.38 0"
         }
     ]
 }
