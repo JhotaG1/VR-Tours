@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Virtual 360 - Casa La Carmelita</title>
+    <!-- A-Frame Library -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow: hidden; }
+        
+        /* 2D UI Overlay */
+        #ui-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        #room-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+        }
+        
+        #loading-screen {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #111;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            transition: opacity 0.5s ease;
+        }
+        
+        .spinner {
+            width: 50px; height: 50px;
+            border: 5px solid rgba(255,255,255,0.1);
+            border-top: 5px solid #00C6FF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Controls hint */
+        .controls-hint {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 100;
+        }
+        /* Sidebar Menu */
+        #sidebar-menu {
+            position: absolute;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            
+            -webkit-
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            transition: right 0.3s ease;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #sidebar-menu.open {
+            right: 0;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        
+        .sidebar-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .sidebar-search {
+            padding: 15px 15px 0 15px;
+        }
+
+        .sidebar-search input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .sidebar-search input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .sidebar-search input:focus {
+            border-color: #00C6FF;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .thumbnail-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .thumbnail-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .thumbnail-list::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2); 
+        }
+        .thumbnail-list::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3); 
+            border-radius: 3px;
+        }
+
+        .thumb-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            flex-shrink: 0;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #error-log {
+            position: absolute;
+            top: 0; left: 0; width: 100%; max-height: 50%;
+            background: rgba(255,0,0,0.8);
+            color: white; font-family: monospace; font-size: 12px;
+            z-index: 99999; pointer-events: none;
+            overflow-y: auto; padding: 10px; display: none;
+        }
+
+        .thumb-item:hover, .thumb-item.active {
+            background: rgba(255,255,255,0.15);
+            border-color: #00C6FF;
+            transform: translateY(-2px);
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .thumb-item .thumb-label {
+            padding: 10px;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Toggle Button */
+        #menu-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1500;
+            background: rgba(0, 0, 0, 0.6);
+            
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+        }
+
+        #menu-toggle:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        #menu-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+        
+    
+        /* Home Button */
+        #home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1500;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #home-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        #home-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: white;
+            stroke-width: 2;
+        }
+    
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <h2 id="loading-text">Cargando Tour 360...</h2>
+    </div>
+
+    <!-- UI Overlay -->
+    
+    <!-- Home Button -->
+    <a id="home-btn" href="../tours.html" title="Volver al Menú de Tours">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Volver</span>
+    </a>
+
+    <div class="controls-hint">Arrastra para mirar<br>Haz clic en los puntos azules para avanzar</div>
+    <div id="ui-overlay">
+        <h2 id="room-name">Cargando...</h2>
+    </div>
+
+    <!-- Menu Toggle Button -->
+    <div id="menu-toggle" onclick="toggleSidebar()" title="Menú de Habitaciones">
+        <svg viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebar-menu">
+        <div class="sidebar-header">
+            <h3>Habitaciones</h3>
+            <button class="close-btn" onclick="toggleSidebar()">×</button>
+        </div>
+        <div class="sidebar-search">
+            <input type="text" id="room-search" placeholder="Buscar habitación..." onkeyup="filterRooms()">
+        </div>
+        <div class="thumbnail-list" id="thumbnail-list">
+            <!-- JS injects thumbs here -->
+        </div>
+    </div>
+
+    <!-- Error Log -->
+    <div id="error-log"></div>
+
+    <!-- Local File Warning Screen -->
+    <div id="local-file-warning" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #111; z-index: 100000; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: sans-serif; padding: 20px; display: none;">
+        <h1 style="color: #00C6FF; font-size: 32px; margin-bottom: 20px;">¡Casi listo!</h1>
+        <p style="font-size: 18px; max-width: 600px; line-height: 1.5; margin-bottom: 30px;">
+            Por seguridad, tu navegador no permite cargar entornos 3D dando doble clic al archivo (ruta file:///). 
+            <br><br>
+            El servidor ya está encendido en segundo plano. Para entrar al Tour Virtual de forma correcta, haz clic en el botón de abajo:
+        </p>
+        <a href="http://localhost:8000/tour_carmelita.html" style="background: #00C6FF; color: black; padding: 15px 30px; text-decoration: none; font-size: 20px; font-weight: bold; border-radius: 30px; transition: all 0.3s ease;">Entrar al Tour Virtual</a>
+    </div>
+
+    <!-- A-Frame Scene -->
+    <a-scene 
+        loading-screen="enabled: false;" 
+        renderer="antialias: true; colorManagement: true; sortObjects: true;"
+        vr-mode-ui="enabled: true"
+    >
+        <!-- Asset Management System -->
+        <a-assets id="assets-container">
+            <!-- Images will be injected here dynamically -->
+        </a-assets>
+
+        <!-- The 360 Sky -->
+        <a-sky id="sky-image" radius="50" src="" rotation="0 0 0" material="opacity: 1; transparent: false"></a-sky>
+
+
+
+        <!-- Hotspots Container -->
+        <a-entity id="hotspots-container"></a-entity>
+
+        <!-- Camera and Controls -->
+        <a-entity id="camera-rig" position="0 0 0">
+            <!-- Camera -->
+            <a-camera id="main-camera" position="0 1.6 0" look-controls="reverseMouseDrag: true" wasd-controls-enabled="false">
+                <!-- Reticle/Cursor for VR and desktop clicking -->
+                <a-entity cursor="fuse: false; rayOrigin: mouse;"
+                          raycaster="objects: .clickable"
+                          position="0 0 -1"
+                          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                          material="color: white; shader: flat; opacity: 0.5"
+                          animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                          animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+                          animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1">
+                </a-entity>
+            </a-camera>
+
+            <!-- Tripod cover: Parented to rig so it aligns with initialView -->
+            <a-entity position="0 -10 0" rotation="-90 0 0">
+                <a-circle radius="3.0" material="color: black; shader: flat; opacity: 1.0"></a-circle>
+                <a-image src="/img/logo.png" width="2.8" height="0.86" position="0 0 0.05" material="shader: flat; transparent: true;"></a-image>
+            </a-entity>
+            
+            <!-- Laser controls for Oculus Quest / VR Controllers -->
+            <a-entity laser-controls="hand: left" raycaster="objects: .clickable"></a-entity>
+            <a-entity laser-controls="hand: right" raycaster="objects: .clickable"></a-entity>
+        </a-entity>
+
+    </a-scene>
+
+    <!-- Tour Logic -->
+    <script>
+        let tourData = [];
+        let currentPointId = null;
+        let isTransitioning = false;
+
+        const skyEl = document.getElementById('sky-image');
+        const hotspotsContainer = document.getElementById('hotspots-container');
+        const roomNameEl = document.getElementById('room-name');
+        const assetsContainer = document.getElementById('assets-container');
+        const loadingScreen = document.getElementById('loading-screen');
+        const loadingText = document.getElementById('loading-text');
+        
+        const sidebar = document.getElementById('sidebar-menu');
+        const thumbnailList = document.getElementById('thumbnail-list');
+        const errorLog = document.getElementById('error-log');
+        const localWarning = document.getElementById('local-file-warning');
+
+        // Check if running on local file system
+        if (window.location.protocol === 'file:') {
+            localWarning.style.display = 'flex';
+        } else {
+            localWarning.style.display = 'none';
+        }
+
+        function logError(msg) {
+            errorLog.style.display = 'block';
+            errorLog.innerHTML += msg + '<br>';
+        }
+        
+        window.onerror = function(message, source, lineno, colno, error) {
+            logError("JS Error: " + message);
+        };
+        
+        const originalError = console.error;
+        console.error = function(...args) {
+            logError("Console Error: " + args.join(" "));
+            originalError.apply(console, args);
+        };
+        const originalWarn = console.warn;
+        console.warn = function(...args) {
+            logError("Console Warn: " + args.join(" "));
+            originalWarn.apply(console, args);
+        };
+
+        // Functions
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar-menu');
+            sidebar.classList.toggle('open');
+            // If opening the sidebar, we might want to focus the search bar
+            if(sidebar.classList.contains('open')) {
+                setTimeout(() => {
+                    document.getElementById('room-search').focus();
+                }, 300);
+            }
+        }
+
+        function filterRooms() {
+            const input = document.getElementById('room-search');
+            const filter = input.value.toLowerCase();
+            const thumbs = document.getElementById('thumbnail-list').getElementsByClassName('thumb-item');
+            
+            for (let i = 0; i < thumbs.length; i++) {
+                const label = thumbs[i].getElementsByClassName('thumb-label')[0];
+                if (label) {
+                    const textValue = label.textContent || label.innerText;
+                    if (textValue.toLowerCase().indexOf(filter) > -1) {
+                        thumbs[i].style.display = "";
+                    } else {
+                        thumbs[i].style.display = "none";
+                    }
+                }       
+            }
+        }
+
+        function renderThumbnails() {
+            thumbnailList.innerHTML = '';
+            tourData.forEach((point, index) => {
+                const item = document.createElement('div');
+                item.className = 'thumb-item';
+                
+                item.onclick = () => {
+                    if (point.id !== currentPointId) {
+                        loadPoint(point.id);
+                    }
+                    if(window.innerWidth < 768) {
+                        toggleSidebar();
+                    }
+                };
+
+                const img = document.createElement('img');
+                if (point.image.includes('/img/tours/carmelita/')) {
+                    img.src = point.image.replace('/img/tours/carmelita/', '/img/tours/carmelita_thumbs/');
+                } else if (point.image.includes('/img/tours/cafelia/')) {
+                    img.src = point.image.replace('/img/tours/cafelia/', '/img/tours/cafelia_thumbs/');
+                } else {
+                    img.src = point.image;
+                }
+                img.loading = "lazy";
+
+                const label = document.createElement('div');
+                label.className = 'thumb-label';
+                label.innerText = point.name;
+
+                item.appendChild(img);
+                item.appendChild(label);
+                thumbnailList.appendChild(item);
+            });
+        }
+
+        // Load JSON externally with cache busting
+        fetch('tour_carmelita_config.json?t=' + new Date().getTime())
+            .then(response => response.json())
+            .then(data => {
+                tourData = data.tour;
+                if(tourData.length > 0) {
+                    renderThumbnails();
+                    preloadImages(() => {
+                        loadPoint(tourData[0].id, true);
+                    });
+                }
+            })
+            .catch(error => {
+                logError("Failed to load tour_carmelita_config.json: " + error);
+                console.error('Error loading tour data:', error);
+            });
+        if(tourData.length > 0) {
+            renderThumbnails();
+            preloadImages(() => {
+                loadPoint(tourData[0].id, true);
+            });
+        }
+
+        function preloadImages(callback) {
+            // To save memory on mobile/Quest, we only preload the first few images
+            let loadedCount = 0;
+            const toLoad = Math.min(3, tourData.length);
+            
+            for(let i=0; i<toLoad; i++) {
+                const img = new Image();
+                img.src = tourData[i].image;
+                
+                img.onload = () => {
+                    loadedCount++;
+                    if(loadedCount === toLoad) {
+                        callback();
+                    }
+                };
+                img.onerror = () => {
+                    loadedCount++;
+                    if(loadedCount === toLoad) callback();
+                };
+                // We don't append to DOM to avoid A-Frame asset injection issues
+            }
+        }
+
+        function loadPoint(pointId, initialLoad = false) {
+            if(isTransitioning) return;
+            
+            const pointData = tourData.find(p => p.id === pointId);
+            if(!pointData) return;
+            
+            isTransitioning = true;
+            currentPointId = pointId;
+            
+            // UI Update
+            roomNameEl.innerText = pointData.name;
+
+            // Apply Initial View Rotation if available
+            const cameraRig = document.getElementById('camera-rig');
+            const cameraEl = document.getElementById('main-camera');
+            
+            if (cameraEl && cameraEl.components['look-controls']) {
+                // Reset internal look-controls rotation so we don't inherit rotation from the previous room
+                cameraEl.components['look-controls'].pitchObject.rotation.x = 0;
+                cameraEl.components['look-controls'].yawObject.rotation.y = 0;
+            }
+
+            if (cameraRig) {
+                if (pointData.initialView) {
+                    cameraRig.setAttribute('rotation', pointData.initialView);
+                } else {
+                    cameraRig.setAttribute('rotation', '0 0 0');
+                }
+            }
+            
+            // Update thumbnails active state
+            document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
+            const index = tourData.findIndex(p => p.id === pointId);
+            if (index !== -1 && thumbnailList.children[index]) {
+                const activeThumb = thumbnailList.children[index];
+                activeThumb.classList.add('active');
+                activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            const changeScene = () => {
+                // Remove old hotspots
+                while(hotspotsContainer.firstChild) {
+                    hotspotsContainer.removeChild(hotspotsContainer.firstChild);
+                }
+                
+                const skyEl = document.getElementById('sky-image');
+                const img = new Image();
+                img.src = pointData.image;
+                
+                img.onload = () => {
+                    skyEl.setAttribute('src', pointData.image);
+                    
+                    // Add new hotspots
+                    if (pointData.hotspots) {
+                        pointData.hotspots.forEach(hs => {
+                            createHotspot(hs);
+                        });
+                    }
+
+                    setTimeout(() => {
+                        isTransitioning = false;
+                        if(initialLoad) {
+                            loadingScreen.style.opacity = '0';
+                            setTimeout(() => loadingScreen.style.display = 'none', 500);
+                        }
+                    }, 50);
+                };
+            };
+
+            if(initialLoad) {
+                changeScene();
+            } else {
+                changeScene();
+            }
+        }
+
+        // Custom component to make hotspots always face the camera
+        AFRAME.registerComponent('look-at-cam', {
+          tick: function () {
+            var cameraEl = document.querySelector('#main-camera');
+            if (cameraEl) {
+              var targetPos = cameraEl.object3D.position;
+              // Only rotate on Y axis to prevent text from tilting up/down
+              targetPos.y = this.el.object3D.position.y;
+              this.el.object3D.lookAt(targetPos);
+            }
+          }
+        });
+
+        function createHotspot(data) {
+            // Normalize position to distance 5 so it is clearly visible and sized correctly
+            let posStr = data.position;
+            if(typeof posStr === 'string') {
+                const parts = posStr.split(' ').map(parseFloat);
+                if(parts.length === 3 && !isNaN(parts[0])) {
+                    const len = Math.sqrt(parts[0]*parts[0] + parts[1]*parts[1] + parts[2]*parts[2]);
+                    if(len > 0.1) {
+                        const scale = 5 / len;
+                        posStr = `${(parts[0]*scale).toFixed(2)} ${(parts[1]*scale).toFixed(2)} ${(parts[2]*scale).toFixed(2)}`;
+                    }
+                }
+            }
+
+            // A group to hold the hotspot and label
+            const groupEl = document.createElement('a-entity');
+            groupEl.setAttribute('position', posStr);
+            groupEl.setAttribute('look-at-cam', '');
+            
+            // The clickable circle
+            const circleEl = document.createElement('a-circle');
+            circleEl.setAttribute('radius', '0.13');
+            circleEl.setAttribute('color', '#00C6FF');
+            circleEl.setAttribute('opacity', '0.7');
+            circleEl.setAttribute('class', 'clickable');
+            
+            // Hover animation
+            circleEl.setAttribute('animation__mouseenter', 'property: scale; to: 1.2 1.2 1.2; dur: 200; startEvents: mouseenter');
+            circleEl.setAttribute('animation__mouseleave', 'property: scale; to: 1 1 1; dur: 200; startEvents: mouseleave');
+            
+            // Inner circle for design
+            const innerCircle = document.createElement('a-circle');
+            innerCircle.setAttribute('radius', '0.06');
+            innerCircle.setAttribute('color', '#FFFFFF');
+            innerCircle.setAttribute('position', '0 0 0.01');
+            circleEl.appendChild(innerCircle);
+
+            // Only display the interactive circle without text
+            
+            // Add click listener
+            circleEl.addEventListener('click', () => {
+                loadPoint(data.target);
+            });
+
+            groupEl.appendChild(circleEl);
+            
+            hotspotsContainer.appendChild(groupEl);
+        }
+    </script>
+</body>
+</html>
