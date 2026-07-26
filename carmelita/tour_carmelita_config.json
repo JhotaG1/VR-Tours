@@ -962,7 +962,8 @@
                     "position": "-4.52 -0.57 2.06",
                     "label": "entrada corredor piscina cuarto 01"
                 }
-            ]
+            ],
+            "initialView": "0 -84.22 0"
         },
         {
             "id": "point_9",

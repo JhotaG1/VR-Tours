@@ -60,18 +60,28 @@
             "hotspots": [
                 {
                     "target": "point_2",
-                    "position": "4.34 2.47 -0.20",
+                    "position": "4.53 2.07 -0.40",
                     "label": "Wnrada Escaleras 01"
                 },
                 {
                     "target": "point_3",
-                    "position": "2.36 1.52 4.14",
+                    "position": "2.46 0.68 4.30",
                     "label": "Sala Derecha 01"
                 },
                 {
                     "target": "point_5",
-                    "position": "4.88 1.08 0.06",
+                    "position": "4.84 1.23 -0.26",
                     "label": "Lugar 5 (Cafelia360_05.webp)"
+                },
+                {
+                    "target": "point_8",
+                    "position": "3.96 1.94 -2.36",
+                    "label": "Lobby segundo piso 01"
+                },
+                {
+                    "target": "point_36",
+                    "position": "-4.74 1.02 -1.21",
+                    "label": "Entrada Principal Exterior 01"
                 }
             ],
             "initialView": "0 -472.35 0"
