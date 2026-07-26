@@ -608,6 +608,17 @@
                         }
                     }, 50);
                 };
+                
+                img.onerror = () => {
+                    console.error("Failed to load image: " + pointData.image);
+                    logError("Failed to load image: " + pointData.image);
+                    isTransitioning = false; // Prevent getting stuck
+                    if(initialLoad) {
+                        loadingText.innerText = "Error loading tour.";
+                    } else {
+                        alert("Error cargando la imagen. Intenta de nuevo.");
+                    }
+                };
             };
 
             if(initialLoad) {
