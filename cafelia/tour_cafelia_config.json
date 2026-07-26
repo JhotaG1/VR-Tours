@@ -529,7 +529,8 @@
                     "position": "-3.49 -2.40 -2.66",
                     "label": "Lobby segundo piso 01"
                 }
-            ]
+            ],
+            "initialView": "0 17530.22 0"
         },
         {
             "id": "point_18",
