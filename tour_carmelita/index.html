@@ -1,58 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <title>Tour Virtual - Casa La Carmelita</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- Pannellum library -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
     <style>
-        body { margin: 0; padding: 0; font-family: sans-serif; }
+        body, html { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; overflow: hidden; background: #000; }
         #panorama { width: 100vw; height: 100vh; }
-        #menu {
+        
+        /* Premium UI Overlay */
+        #ui-container {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 2;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            max-height: 90vh;
-            overflow-y: auto;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: calc(100vh - 40px);
+            pointer-events: none;
         }
-        select, button {
-            padding: 8px;
+
+        .glass-panel {
+            background: rgba(10, 15, 20, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 15px;
+            pointer-events: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: white;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
             font-size: 14px;
-            width: 100%;
-            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            width: fit-content;
         }
+        
+        .back-btn svg { width: 18px; height: 18px; transition: transform 0.3s; }
+        .back-btn:hover { color: #cba365; }
+        .back-btn:hover svg { transform: translateX(-5px); stroke: #cba365; }
+
+        /* Scene Menu */
+        #menu-header {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #cba365;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #scene-list-wrapper {
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+            width: 200px;
+            padding-right: 5px;
+            transition: max-height 0.3s ease;
+        }
+
+        /* Custom Scrollbar */
+        #scene-list-wrapper::-webkit-scrollbar { width: 4px; }
+        #scene-list-wrapper::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 4px; }
+        #scene-list-wrapper::-webkit-scrollbar-thumb { background: rgba(203, 163, 101, 0.5); border-radius: 4px; }
+        #scene-list-wrapper::-webkit-scrollbar-thumb:hover { background: rgba(203, 163, 101, 0.8); }
+
         .scene-btn {
             display: block;
             width: 100%;
             text-align: left;
-            margin-bottom: 2px;
-            background: #f0f0f0;
-            border: 1px solid #ccc;
+            margin-bottom: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #d0d5db;
             cursor: pointer;
-            padding: 5px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            transition: all 0.2s;
         }
+
         .scene-btn:hover {
-            background: #e0e0e0;
+            background: rgba(203, 163, 101, 0.2);
+            border-color: rgba(203, 163, 101, 0.5);
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .scene-btn.active {
+            background: rgba(203, 163, 101, 0.8);
+            color: #000;
+            font-weight: 600;
+            border-color: #cba365;
+        }
+
+        /* Title Overlay */
+        #title-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            pointer-events: none;
+            text-align: center;
+        }
+
+        #title-overlay h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        
+        #title-overlay p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #cba365;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+        }
+
+        @media (max-width: 600px) {
+            #ui-container { top: 10px; left: 10px; }
+            #scene-list-wrapper { width: 160px; }
+            #title-overlay h2 { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-<div id="menu">
-    <b>Navegación:</b><br><br>
-    <div id="scene-list"></div>
+<div id="ui-container">
+    <div class="glass-panel">
+        <a href="../" class="back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Volver al Menú
+        </a>
+    </div>
+
+    <div class="glass-panel" id="menu-panel">
+        <div id="menu-header" onclick="toggleMenu()">
+            Navegación 
+            <svg id="menu-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div id="scene-list-wrapper">
+            <div id="scene-list"></div>
+        </div>
+    </div>
+</div>
+
+<div id="title-overlay">
+    <h2 id="current-scene-title">Casa La Carmelita</h2>
+    <p>Tour Virtual Inmersivo</p>
 </div>
 
 <div id="panorama"></div>
 
 <script>
+    function toggleMenu() {
+        var wrapper = document.getElementById('scene-list-wrapper');
+        var chevron = document.getElementById('menu-chevron');
+        if (wrapper.style.maxHeight === '0px') {
+            wrapper.style.maxHeight = 'calc(100vh - 180px)';
+            chevron.style.transform = 'rotate(0deg)';
+        } else {
+            wrapper.style.maxHeight = '0px';
+            chevron.style.transform = 'rotate(-90deg)';
+        }
+    }
+
     // Pannellum Configuration
     var config = {
         "default": {
@@ -329,19 +463,29 @@
     };
 
     var viewer = pannellum.viewer('panorama', config);
+    var sceneButtons = {};
 
     // Build the navigation menu
     var sceneList = document.getElementById('scene-list');
     for (var sceneId in config.scenes) {
         var btn = document.createElement('button');
         btn.className = 'scene-btn';
+        if (sceneId === config.default.firstScene) {
+            btn.classList.add('active');
+        }
         btn.textContent = config.scenes[sceneId].title;
         btn.onclick = (function(id) {
             return function() {
                 viewer.loadScene(id);
+                // Highlight active button
+                for (var key in sceneButtons) {
+                    sceneButtons[key].classList.remove('active');
+                }
+                sceneButtons[id].classList.add('active');
             };
         })(sceneId);
         sceneList.appendChild(btn);
+        sceneButtons[sceneId] = btn;
     }
 </script>
 
