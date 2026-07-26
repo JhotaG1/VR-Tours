@@ -3,7 +3,7 @@
         {
             "id": "point_42",
             "name": "Entrada Principal ",
-            "image": "images/escena_42.jpg",
+            "image": "images/escena_42.webp",
             "hotspots": [
                 {
                     "target": "point_41",
@@ -31,7 +31,7 @@
         {
             "id": "point_43",
             "name": "Entrada corredor Izquierda 01",
-            "image": "images/escena_43.jpg",
+            "image": "images/escena_43.webp",
             "hotspots": [
                 {
                     "target": "point_42",
@@ -44,7 +44,7 @@
         {
             "id": "point_41",
             "name": "Entrada corredor Derecho 01",
-            "image": "images/escena_41.jpg",
+            "image": "images/escena_41.webp",
             "hotspots": [
                 {
                     "target": "point_40",
@@ -72,7 +72,7 @@
         {
             "id": "point_40",
             "name": "Entrada corredor Derecho 02",
-            "image": "images/escena_40.jpg",
+            "image": "images/escena_40.webp",
             "hotspots": [
                 {
                     "target": "point_41",
@@ -95,7 +95,7 @@
         {
             "id": "point_44",
             "name": "Garaje",
-            "image": "images/escena_44.jpg",
+            "image": "images/escena_44.webp",
             "hotspots": [
                 {
                     "target": "point_42",
@@ -108,7 +108,7 @@
         {
             "id": "point_39",
             "name": "Corredor trazero mirada monta\u00f1a",
-            "image": "images/escena_39.jpg",
+            "image": "images/escena_39.webp",
             "hotspots": [
                 {
                     "target": "point_37",
@@ -135,7 +135,7 @@
         {
             "id": "point_38",
             "name": "Corredor trasero esquina derecha",
-            "image": "images/escena_38.jpg",
+            "image": "images/escena_38.webp",
             "hotspots": [
                 {
                     "target": "point_1",
@@ -163,7 +163,7 @@
         {
             "id": "point_23",
             "name": "Entrada interior 01",
-            "image": "images/escena_23.jpg",
+            "image": "images/escena_23.webp",
             "hotspots": [
                 {
                     "target": "point_22",
@@ -211,7 +211,7 @@
         {
             "id": "point_21",
             "name": "Sala Izquierda 01",
-            "image": "images/escena_21.jpg",
+            "image": "images/escena_21.webp",
             "hotspots": [
                 {
                     "target": "point_23",
@@ -243,7 +243,7 @@
         {
             "id": "point_22",
             "name": "Sala Derecha 01",
-            "image": "images/escena_22.jpg",
+            "image": "images/escena_22.webp",
             "hotspots": [
                 {
                     "target": "point_21",
@@ -275,7 +275,7 @@
         {
             "id": "point_24",
             "name": "Entrada  pasillo 01",
-            "image": "images/escena_24.jpg",
+            "image": "images/escena_24.webp",
             "hotspots": [
                 {
                     "target": "point_22",
@@ -332,7 +332,7 @@
         {
             "id": "point_25",
             "name": "Entrada Pasilla entre comedor y sala 3",
-            "image": "images/escena_25.jpg",
+            "image": "images/escena_25.webp",
             "hotspots": [
                 {
                     "target": "point_29",
@@ -384,7 +384,7 @@
         {
             "id": "point_26",
             "name": "Cocina entr comedor 01",
-            "image": "images/escena_26.jpg",
+            "image": "images/escena_26.webp",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -431,7 +431,7 @@
         {
             "id": "point_28",
             "name": "Cocina 02",
-            "image": "images/escena_28.jpg",
+            "image": "images/escena_28.webp",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -458,7 +458,7 @@
         {
             "id": "point_27",
             "name": "Cocina 03",
-            "image": "images/escena_27.jpg",
+            "image": "images/escena_27.webp",
             "hotspots": [
                 {
                     "target": "point_26",
@@ -490,7 +490,7 @@
         {
             "id": "point_29",
             "name": "Exterior Piscina 01",
-            "image": "images/escena_29.jpg",
+            "image": "images/escena_29.webp",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -532,7 +532,7 @@
         {
             "id": "point_30",
             "name": "camino sauna 01",
-            "image": "images/escena_30.jpg",
+            "image": "images/escena_30.webp",
             "hotspots": [
                 {
                     "target": "point_27",
@@ -565,7 +565,7 @@
         {
             "id": "point_31",
             "name": "Sauna frente 01",
-            "image": "images/escena_31.jpg",
+            "image": "images/escena_31.webp",
             "hotspots": [
                 {
                     "target": "point_33",
@@ -603,7 +603,7 @@
         {
             "id": "point_33",
             "name": "Malla vista 01",
-            "image": "images/escena_33.jpg",
+            "image": "images/escena_33.webp",
             "hotspots": [
                 {
                     "target": "point_31",
@@ -631,7 +631,7 @@
         {
             "id": "point_32",
             "name": "Esquina Piscina 01",
-            "image": "images/escena_32.jpg",
+            "image": "images/escena_32.webp",
             "hotspots": [
                 {
                     "target": "point_33",
@@ -674,7 +674,7 @@
         {
             "id": "point_34",
             "name": "Piscina 02",
-            "image": "images/escena_34.jpg",
+            "image": "images/escena_34.webp",
             "hotspots": [
                 {
                     "target": "point_32",
@@ -716,7 +716,7 @@
         {
             "id": "point_35",
             "name": "Piscina 03",
-            "image": "images/escena_35.jpg",
+            "image": "images/escena_35.webp",
             "hotspots": [
                 {
                     "target": "point_34",
@@ -758,7 +758,7 @@
         {
             "id": "point_11",
             "name": "Corredor Exterior Piscina 01",
-            "image": "images/escena_11.jpg",
+            "image": "images/escena_11.webp",
             "hotspots": [
                 {
                     "target": "point_35",
@@ -811,7 +811,7 @@
         {
             "id": "point_10",
             "name": "entrada corredor piscina cuarto 01",
-            "image": "images/escena_10.jpg",
+            "image": "images/escena_10.webp",
             "hotspots": [
                 {
                     "target": "point_11",
@@ -853,7 +853,7 @@
         {
             "id": "point_2",
             "name": "Cuarto Principal Piscina 01",
-            "image": "images/escena_2.jpg",
+            "image": "images/escena_2.webp",
             "hotspots": [
                 {
                     "target": "point_11",
@@ -891,7 +891,7 @@
         {
             "id": "point_1",
             "name": "Cuarto Principal desde ventana 01",
-            "image": "images/escena_1.jpg",
+            "image": "images/escena_1.webp",
             "hotspots": [
                 {
                     "target": "point_10",
@@ -923,7 +923,7 @@
         {
             "id": "point_4",
             "name": "Ba\u00f1o Cuarto Principal 01",
-            "image": "images/escena_4.jpg",
+            "image": "images/escena_4.webp",
             "hotspots": [
                 {
                     "target": "point_3",
@@ -935,7 +935,7 @@
         {
             "id": "point_3",
             "name": "Vestier Cuarto Principal",
-            "image": "images/escena_3.jpg",
+            "image": "images/escena_3.webp",
             "hotspots": [
                 {
                     "target": "point_4",
@@ -962,7 +962,7 @@
         {
             "id": "point_9",
             "name": "Puerta Cuarto Principal 01",
-            "image": "images/escena_9.jpg",
+            "image": "images/escena_9.webp",
             "hotspots": [
                 {
                     "target": "point_5",
@@ -1004,7 +1004,7 @@
         {
             "id": "point_5",
             "name": "Pasillo ventana 01",
-            "image": "images/escena_5.jpg",
+            "image": "images/escena_5.webp",
             "hotspots": [
                 {
                     "target": "point_18",
@@ -1047,7 +1047,7 @@
         {
             "id": "point_6",
             "name": "Cuarto final doble 01",
-            "image": "images/escena_6.jpg",
+            "image": "images/escena_6.webp",
             "hotspots": [
                 {
                     "target": "point_7",
@@ -1069,7 +1069,7 @@
         {
             "id": "point_7",
             "name": "Vestier Cuarto Final 01",
-            "image": "images/escena_7.jpg",
+            "image": "images/escena_7.webp",
             "hotspots": [
                 {
                     "target": "point_6",
@@ -1086,7 +1086,7 @@
         {
             "id": "point_8",
             "name": "Ba\u00f1o Cuarto Final 01",
-            "image": "images/escena_8.jpg",
+            "image": "images/escena_8.webp",
             "hotspots": [
                 {
                     "target": "point_7",
@@ -1103,7 +1103,7 @@
         {
             "id": "point_20",
             "name": "Ba\u00f1o Invitados",
-            "image": "images/escena_20.jpg",
+            "image": "images/escena_20.webp",
             "hotspots": [
                 {
                     "target": "point_18",
@@ -1120,7 +1120,7 @@
         {
             "id": "point_12",
             "name": "Pasillo Cuna 01",
-            "image": "images/escena_12.jpg",
+            "image": "images/escena_12.webp",
             "hotspots": [
                 {
                     "target": "point_9",
@@ -1147,7 +1147,7 @@
         {
             "id": "point_13",
             "name": "Pasillo Plantas 01",
-            "image": "images/escena_13.jpg",
+            "image": "images/escena_13.webp",
             "hotspots": [
                 {
                     "target": "point_5",
@@ -1174,7 +1174,7 @@
         {
             "id": "point_14",
             "name": "Cuarto 03",
-            "image": "images/escena_14.jpg",
+            "image": "images/escena_14.webp",
             "hotspots": [
                 {
                     "target": "point_13",
@@ -1191,7 +1191,7 @@
         {
             "id": "point_15",
             "name": "Vestie 03",
-            "image": "images/escena_15.jpg",
+            "image": "images/escena_15.webp",
             "hotspots": [
                 {
                     "target": "point_16",
@@ -1208,7 +1208,7 @@
         {
             "id": "point_16",
             "name": "Banno Vestier 03",
-            "image": "images/escena_16.jpg",
+            "image": "images/escena_16.webp",
             "hotspots": [
                 {
                     "target": "point_15",
@@ -1225,7 +1225,7 @@
         {
             "id": "point_19",
             "name": "Pasillo interior 01",
-            "image": "images/escena_19.jpg",
+            "image": "images/escena_19.webp",
             "hotspots": [
                 {
                     "target": "point_18",
@@ -1242,7 +1242,7 @@
         {
             "id": "point_18",
             "name": "Pasillo 02",
-            "image": "images/escena_18.jpg",
+            "image": "images/escena_18.webp",
             "hotspots": [
                 {
                     "target": "point_17",
@@ -1300,7 +1300,7 @@
         {
             "id": "point_17",
             "name": "Pasillo plantas Piedra",
-            "image": "images/escena_17.jpg",
+            "image": "images/escena_17.webp",
             "hotspots": [
                 {
                     "target": "point_5",
@@ -1343,7 +1343,7 @@
         {
             "id": "point_36",
             "name": "Parque 01",
-            "image": "images/escena_36.jpg",
+            "image": "images/escena_36.webp",
             "hotspots": [
                 {
                     "target": "point_11",
@@ -1370,7 +1370,7 @@
         {
             "id": "point_37",
             "name": "Mirador trasero 01",
-            "image": "images/escena_37.jpg",
+            "image": "images/escena_37.webp",
             "hotspots": [
                 {
                     "target": "point_36",
