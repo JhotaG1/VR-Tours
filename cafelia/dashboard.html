@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Dashboard - Casa Cafelia</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <!-- SortableJS for Drag and Drop -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <style>
+        /* Mejoras 8K y Color Enhancement */
+        .a-canvas {
+            filter: contrast(1.2) saturate(1.25) brightness(1.05) drop-shadow(0 0 10px rgba(0,0,0,0.1)) !important;
+            image-rendering: -webkit-optimize-contrast !important;
+            image-rendering: high-quality !important;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --bg-deep: #162d24;
+            --bg-dark: #10211a;
+            --bg-card: #1d352b;
+            --color-ivory: #f5e8d1;
+            --color-cyan: #00e5a3;
+            --border-color: rgba(245, 232, 209, 0.15);
+        }
+
+        body, html { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: var(--bg-deep); color: var(--color-ivory); height: 100%; overflow: hidden; }
+        
+        /* 2D Dashboard View */
+        #dashboard-view {
+            display: flex; flex-direction: column; height: 100%; padding: 20px; box-sizing: border-box; overflow-y: auto;
+        }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 20px; }
+        .header h1 { margin: 0; color: var(--color-ivory); font-family: 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: 1px; }
+        .btn { padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .btn-primary { background: var(--color-cyan); color: var(--bg-dark); }
+        .btn-success { background: #28a745; color: white; }
+        .btn-danger { background: #dc3545; color: white; padding: 5px 10px; font-size: 12px;}
+        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        .room-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding-bottom: 50px; }
+        .room-card { background: var(--bg-card); border-radius: 10px; padding: 15px; display: flex; flex-direction: column; gap: 15px; border: 1px solid var(--border-color); cursor: grab; transition: all 0.2s; }
+        .room-card.selected { border: 2px solid var(--color-cyan); background: var(--bg-deep); transform: scale(0.98); }
+        .room-card:active { cursor: grabbing; }
+        .room-thumb { width: 100%; height: 180px; border-radius: 5px; object-fit: cover; }
+        .room-info { display: flex; flex-direction: column; gap: 10px; width: 100%; box-sizing: border-box; }
+        .room-name-input { background: var(--bg-dark); border: 1px solid var(--border-color); color: var(--color-ivory); padding: 8px; border-radius: 5px; font-size: 16px; width: 100%; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        .room-name-input:focus { outline: none; border-color: var(--color-cyan); }
+        .hotspot-list { background: var(--bg-dark); padding: 10px; border-radius: 5px; font-size: 13px; border: 1px solid var(--border-color); }
+        .hotspot-item { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--border-color); }
+        .hotspot-item:last-child { border-bottom: none; }
+
+        /* 3D Editor View */
+        #editor-view { display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1000; }
+        #editor-ui { position: absolute; top: 20px; left: 20px; z-index: 2000; background: rgba(22, 45, 36, 0.9); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color); }
+        #exit-editor-btn { position: absolute; top: 20px; right: 20px; z-index: 2000; }
+        
+        .cursor-ring { position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; border: 3px solid rgba(245, 232, 209, 0.8); border-radius: 50%; transform: translate(-50%, -50%); z-index: 2000; pointer-events: auto; cursor: pointer; transition: transform 0.1s; background: rgba(255,255,255,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        .cursor-ring:hover { transform: translate(-50%, -50%) scale(1.1); background: rgba(245, 232, 209, 0.3); }
+        .cursor-ring:active { transform: translate(-50%, -50%) scale(0.9); }
+        
+    </style>
+</head>
+<body>
+
+    <!-- 2D DASHBOARD -->
+    <div id="dashboard-view">
+        <div class="header">
+            <div style="flex:1;">
+                <h1>Gestor de Tour 360</h1>
+                <p style="margin: 5px 0 0 0; color: #aaa;">Arrastra las tarjetas para cambiar el orden. La primera foto es el inicio del tour.</p>
+            </div>
+            <div>
+                <input type="file" id="upload-image-input" accept="image/jpeg, image/png" style="display: none;" onchange="handleImageUpload(event)">
+                <button class="btn btn-primary" onclick="document.getElementById('upload-image-input').click()">+ Subir Nueva Imagen</button>
+            </div>
+        </div>
+        
+        
+        <div style="margin-bottom: 20px;">
+            <input type="text" id="dashboard-search" placeholder="🔍 Buscar imagen o nombre de lugar..." style="width: 100%; padding: 12px; font-size: 16px; background: var(--bg-dark); color: var(--color-ivory); border: 1px solid var(--border-color); border-radius: 5px; box-sizing: border-box; font-family: 'Inter', sans-serif;" oninput="filterDashboard(this.value)">
+        </div>
+        
+        <div id="room-list-container" class="room-list">
+            <h3 style="text-align: center; color: #555;">Cargando...</h3>
+        </div>
+    </div>
+
+    <!-- 3D EDITOR -->
+    <div id="editor-view">
+        <!-- White circle cursor in the center -->
+        <div class="cursor-ring" onclick="addPointAtCenter()" title="Haz clic aquí para añadir un punto en el centro"></div>
+        
+        <!-- Hotspot Modal Overlay -->
+        <div id="hotspot-modal" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--bg-deep); padding: 20px; border-radius: 10px; z-index: 1000; width: 90%; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); border: 1px solid var(--border-color);">
+            <h3 style="margin-top:0; color: var(--color-cyan); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; font-family: 'Cormorant Garamond', serif;">Crear Punto de Movimiento</h3>
+            
+            <p style="margin: 10px 0 5px 0; font-size: 14px; color: var(--color-ivory);">1. Selecciona a qué lugar lleva:</p>
+            <input type="text" id="modal-search" placeholder="🔍 Buscar imagen..." style="width: 100%; padding: 10px; background: var(--bg-dark); color: var(--color-ivory); border: 1px solid var(--border-color); border-radius: 5px; box-sizing: border-box; margin-bottom: 10px; font-family: 'Inter', sans-serif;">
+            
+            <div id="modal-image-list" style="max-height: 200px; overflow-y: auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 5px; padding: 5px; display: flex; flex-direction: column; gap: 5px;">
+                <!-- Filled via JS -->
+            </div>
+            <input type="hidden" id="modal-selected-id" value="">
+
+            <p style="margin: 15px 0 5px 0; font-size: 14px; color: var(--color-ivory);">2. Nombre que aparecerá (opcional):</p>
+            <input type="text" id="modal-label" placeholder="Ej. Entrar a la cocina" style="width: 100%; padding: 10px; background: var(--bg-dark); color: var(--color-ivory); border: 1px solid var(--border-color); border-radius: 5px; box-sizing: border-box; margin-bottom: 15px; font-family: 'Inter', sans-serif;">
+            
+            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                <button class="btn btn-danger" onclick="closeModal()">Cancelar</button>
+                <button id="modal-accept-btn" class="btn btn-primary" onclick="acceptModal()" disabled>Aceptar</button>
+            </div>
+        </div>
+
+        <button id="exit-editor-btn" class="btn btn-danger" style="font-size: 16px; padding: 10px 20px; z-index: 999;" onclick="exitEditor()">Volver al Dashboard</button>
+        <button id="set-view-btn" class="btn btn-success" style="position: absolute; top: 20px; right: 230px; font-size: 16px; padding: 10px 20px; z-index: 999;" onclick="setInitialView()">👁️ Guardar Vista Inicial</button>
+        
+        <!-- Instruction text for the user -->
+        <div id="editor-instructions" style="position: absolute; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 20px; color: white; pointer-events: none; z-index: 10;">
+            Haz clic en el círculo blanco central para añadir un punto. ¡Puedes arrastrar los puntos azules para moverlos!
+        </div>
+
+        <a-scene embedded style="width: 100%; height: 100%;" cursor="rayOrigin: mouse" raycaster="objects: .clickable, #editor-sky">
+            <a-camera position="0 1.6 0" wasd-controls-enabled="false"></a-camera>
+            <a-sky id="editor-sky" radius="50" rotation="0 0 0" class="clickable"></a-sky>
+            <!-- Tripod cover: Black circle and logo (Small standard size) -->
+            <a-entity position="0 -10 0" rotation="-90 0 0">
+                <a-circle radius="3.0" material="color: black; shader: flat; opacity: 1.0"></a-circle>
+                <a-image src="/img/logo.png" width="2.8" height="0.86" position="0 0 0.05" material="shader: flat; transparent: true;"></a-image>
+            </a-entity>
+            <a-entity id="editor-hotspots"></a-entity>
+        </a-scene>
+    </div>
+
+    <script>
+        // Custom component to make hotspots always face the camera
+        AFRAME.registerComponent('look-at-cam', {
+          tick: function () {
+            var cameraEl = document.querySelector('a-scene').camera.el;
+            if (cameraEl) {
+              var targetPos = cameraEl.object3D.position;
+              targetPos.y = this.el.object3D.position.y;
+              this.el.object3D.lookAt(targetPos);
+            }
+          }
+        });
+
+        // Draggable component for hotspots
+        AFRAME.registerComponent('draggable-hotspot', {
+            init: function () {
+                this.isDragging = false;
+                
+                this.el.addEventListener('mousedown', (evt) => {
+                    evt.stopPropagation();
+                    this.isDragging = true;
+                    document.querySelector('a-scene').camera.el.setAttribute('look-controls', 'enabled', false);
+                    this.el.setAttribute('material', 'color', '#00ff00'); // Green while dragging
+                });
+                
+                window.addEventListener('mouseup', () => {
+                    if (this.isDragging) {
+                        this.isDragging = false;
+                        document.querySelector('a-scene').camera.el.setAttribute('look-controls', 'enabled', true);
+                        this.el.setAttribute('material', 'color', '#007bff'); // Back to blue
+                        
+                        // Save the new position to tourData
+                        const hsData = this.el.hotspotData;
+                        if (hsData) {
+                            const pos = this.el.getAttribute('position');
+                            hsData.position = `${pos.x.toFixed(2)} ${pos.y.toFixed(2)} ${pos.z.toFixed(2)}`;
+                            autoSave();
+                        }
+                    }
+                });
+                
+                window.addEventListener('mousemove', (evt) => {
+                    if (this.isDragging) {
+                        const raycaster = document.querySelector('a-scene').components.raycaster;
+                        if(raycaster) {
+                            const intersects = raycaster.intersections;
+                            const sky = document.getElementById('editor-sky');
+                            const skyHit = intersects.find(i => i.object.el === sky);
+                            if (skyHit) {
+                                const point = skyHit.point;
+                                const len = Math.sqrt(point.x**2 + point.y**2 + point.z**2);
+                                const scale = 5 / len;
+                                this.el.setAttribute('position', {
+                                    x: point.x * scale,
+                                    y: point.y * scale,
+                                    z: point.z * scale
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        let tourData = [];
+        let currentEditorRoomId = null;
+        let selectedPosition = null;
+        let tempHotspot = null;
+
+        // Load Initial Data with cache busting to prevent old versions from loading
+        fetch('tour_cafelia_config.json?t=' + new Date().getTime())
+            .then(res => res.json())
+            .then(data => {
+                tourData = data.tour;
+                renderDashboard();
+                initSortable();
+            })
+            .catch(err => alert("Error cargando tour_cafelia_config.json. Asegúrate de estar usando http://localhost:8000"));
+
+        function renderDashboard() {
+            const container = document.getElementById('room-list-container');
+            container.innerHTML = '';
+
+            tourData.forEach((room, index) => {
+                const card = document.createElement('div');
+                card.className = 'room-card';
+                card.dataset.id = room.id;
+
+                // Thumbnail container
+                const thumbContainer = document.createElement('div');
+                thumbContainer.style.position = 'relative';
+
+                const img = document.createElement('img');
+                img.src = room.image + "?t=" + new Date().getTime();
+                img.className = 'room-thumb';
+                
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'btn btn-danger';
+                deleteBtn.innerHTML = '🗑️';
+                deleteBtn.title = 'Eliminar imagen';
+                deleteBtn.style.position = 'absolute';
+                deleteBtn.style.top = '5px';
+                deleteBtn.style.right = '5px';
+                deleteBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    if(confirm(`¿Estás seguro de que quieres eliminar la imagen "${room.name}"?`)) {
+                        tourData = tourData.filter(r => r.id !== room.id);
+                        // Limpiar los puntos de conexión que llevaban a esta imagen
+                        tourData.forEach(r => {
+                            r.hotspots = r.hotspots.filter(h => h.target !== room.id);
+                        });
+                        renderDashboard();
+                        autoSave();
+                    }
+                };
+
+                thumbContainer.appendChild(img);
+                thumbContainer.appendChild(deleteBtn);
+                card.appendChild(thumbContainer);
+
+                // Info Container
+                const info = document.createElement('div');
+                info.className = 'room-info';
+
+                // Name Input
+                const nameInput = document.createElement('input');
+                nameInput.type = 'text';
+                nameInput.className = 'room-name-input';
+                nameInput.value = room.name;
+                nameInput.onchange = (e) => {
+                    room.name = e.target.value;
+                    autoSave();
+                };
+                
+                // Hotspots List
+                const hsContainer = document.createElement('div');
+                hsContainer.className = 'hotspot-list';
+                if (!room.hotspots || room.hotspots.length === 0) {
+                    hsContainer.innerHTML = '<span style="color: #777;">Sin conexiones aún.</span>';
+                } else {
+                    const title = document.createElement('strong');
+                    title.innerText = "Conexiones (Puntos Azules):";
+                    title.style.display = 'block';
+                    title.style.marginBottom = '5px';
+                    hsContainer.appendChild(title);
+
+                    room.hotspots.forEach((hs, hsIndex) => {
+                        const targetRoom = tourData.find(r => r.id === hs.target);
+                        const targetName = targetRoom ? targetRoom.name : hs.target;
+                        
+                        const item = document.createElement('div');
+                        item.className = 'hotspot-item';
+                        item.innerHTML = `<span>Lleva a: <b>${targetName}</b></span>`;
+                        
+                        const delBtn = document.createElement('button');
+                        delBtn.className = 'btn btn-danger';
+                        delBtn.innerText = 'Borrar';
+                        delBtn.onclick = () => {
+                            room.hotspots.splice(hsIndex, 1);
+                            renderDashboard(); // Re-render
+                            autoSave();
+                        };
+                        item.appendChild(delBtn);
+                        hsContainer.appendChild(item);
+                    });
+                }
+
+                // Controls
+                const controls = document.createElement('div');
+                const editBtn = document.createElement('button');
+                editBtn.className = 'btn btn-success';
+                editBtn.innerText = '🗺️ Abrir Editor 3D para añadir puntos';
+                editBtn.onclick = () => openEditor(room.id);
+                controls.appendChild(editBtn);
+
+                info.appendChild(nameInput);
+                info.appendChild(controls);
+                info.appendChild(hsContainer);
+                
+                card.appendChild(info);
+                container.appendChild(card);
+            });
+        }
+
+        function initSortable() {
+            const container = document.getElementById('room-list-container');
+            
+            if(Sortable.MultiDrag) {
+                Sortable.mount(new Sortable.MultiDrag());
+            }
+
+            window.sortableInstance = new Sortable(container, {
+                animation: 150,
+                multiDrag: true, 
+                selectedClass: 'selected', 
+                onSort: function (evt) {
+                    // Small timeout to ensure DOM is fully settled
+                    setTimeout(() => {
+                        const newTourData = [];
+                        const cards = container.querySelectorAll('.room-card');
+                        cards.forEach(card => {
+                            const id = card.dataset.id;
+                            const room = tourData.find(r => r.id === id);
+                            if(room) newTourData.push(room);
+                        });
+                        tourData = newTourData;
+                        autoSave();
+                    }, 50);
+                },
+            });
+        }
+
+
+
+        
+        function filterDashboard(term) {
+            const lowerTerm = term.toLowerCase();
+            const cards = document.querySelectorAll('.room-card');
+            const isFiltering = lowerTerm.length > 0;
+            
+            if (window.sortableInstance) {
+                window.sortableInstance.option("disabled", isFiltering);
+            }
+
+            cards.forEach(card => {
+                const id = card.dataset.id;
+                const room = tourData.find(r => r.id === id);
+                if (room && room.name.toLowerCase().includes(lowerTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function autoSave() {
+            const finalJSON = JSON.stringify({ file: 'cafelia/tour_cafelia_config.json', tour: tourData }, null, 4);
+            fetch('/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: finalJSON
+            }).then(r => r.json()).then(res => {
+                if(res.status === 'success') {
+                    showToast('¡Cambios guardados automáticamente!');
+                }
+            }).catch(e => console.error("Auto-save failed", e));
+        }
+
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Data = e.target.result;
+                
+                showToast("Subiendo imagen... Por favor espera.");
+                
+                fetch('/upload', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename: file.name, data: base64Data })
+                })
+                .then(r => r.json())
+                .then(res => {
+                    if (res.status === 'success') {
+                        const newId = 'room_' + Date.now();
+                        tourData.push({
+                            id: newId,
+                            name: file.name.split('.')[0] || 'Nueva Vista',
+                            image: res.file,
+                            hotspots: [],
+                            initialView: { pitch: 0, yaw: 0 }
+                        });
+                        renderDashboard();
+                        autoSave();
+                        showToast("¡Imagen subida con éxito!");
+                    } else {
+                        alert("Error al subir la imagen: " + res.message);
+                    }
+                })
+                .catch(err => {
+                    alert("Error de conexión al subir la imagen.");
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function showToast(msg) {
+            let toast = document.getElementById('toast');
+            if(!toast) {
+                toast = document.createElement('div');
+                toast.id = 'toast';
+                toast.style.position = 'fixed';
+                toast.style.bottom = '20px';
+                toast.style.right = '20px';
+                toast.style.background = '#00e5a3';
+                toast.style.color = '#10211a';
+                toast.style.fontWeight = 'bold';
+                toast.style.padding = '10px 20px';
+                toast.style.borderRadius = '30px';
+                toast.style.zIndex = '9999';
+                toast.style.transition = 'opacity 0.3s';
+                toast.style.boxShadow = '0 5px 15px rgba(0,0,0,0.5)';
+                document.body.appendChild(toast);
+            }
+            toast.innerText = msg;
+            toast.style.opacity = '1';
+            setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+        }
+
+        // --- 3D EDITOR LOGIC --- //
+
+        function openEditor(roomId) {
+            currentEditorRoomId = roomId;
+            const room = tourData.find(r => r.id === roomId);
+            
+            document.getElementById('dashboard-view').style.display = 'none';
+            document.getElementById('editor-view').style.display = 'block';
+
+            // Load 3D texture robustly
+            const sky = document.getElementById('editor-sky');
+            sky.setAttribute('src', ''); // clear
+            setTimeout(() => { sky.setAttribute('src', room.image); }, 50);
+
+            renderEditorHotspots();
+            
+            // Resize A-Frame to fit newly displayed container
+            window.dispatchEvent(new Event('resize'));
+        }
+
+        function exitEditor() {
+            document.getElementById('dashboard-view').style.display = 'flex';
+            document.getElementById('editor-view').style.display = 'none';
+            closeModal();
+            renderDashboard();
+        }
+
+        function setInitialView() {
+            const camEl = document.querySelector('a-scene').camera.el;
+            if(!camEl) return;
+            const rot = camEl.getAttribute('rotation');
+            const room = tourData.find(r => r.id === currentEditorRoomId);
+            if(room) {
+                room.initialView = `0 ${rot.y.toFixed(2)} 0`;
+                autoSave();
+                alert('¡Vista inicial guardada! El usuario mirará en esta dirección al entrar a la habitación.');
+            }
+        }
+
+
+        function renderEditorHotspots() {
+            const hsContainer = document.getElementById('editor-hotspots');
+            hsContainer.innerHTML = '';
+            
+            const room = tourData.find(r => r.id === currentEditorRoomId);
+            if(room && room.hotspots) {
+                room.hotspots.forEach(hs => {
+                    // Normalize position to distance 3
+                    let posStr = hs.position;
+                    if(typeof posStr === 'string') {
+                        const parts = posStr.split(' ').map(parseFloat);
+                        if(parts.length === 3 && !isNaN(parts[0])) {
+                            const len = Math.sqrt(parts[0]*parts[0] + parts[1]*parts[1] + parts[2]*parts[2]);
+                            if(len > 0.1) {
+                                const scale = 5 / len;
+                                posStr = `${(parts[0]*scale).toFixed(2)} ${(parts[1]*scale).toFixed(2)} ${(parts[2]*scale).toFixed(2)}`;
+                            }
+                        }
+                    }
+
+                    const el = document.createElement('a-entity');
+                    el.setAttribute('geometry', 'primitive: circle; radius: 0.13');
+                    el.setAttribute('material', 'color: #00e5a3; shader: flat; opacity: 0.8'); // Cyan button
+                    el.setAttribute('position', posStr);
+                    el.setAttribute('look-at-cam', '');
+                    el.classList.add('clickable');
+                    el.setAttribute('draggable-hotspot', '');
+                    el.hotspotData = hs; // Attach data for dragging updates
+                    
+                    // Delete button in editor
+                    el.classList.add('clickable');
+                    el.addEventListener('click', (e) => {
+                        e.stopPropagation(); // prevent creating a new hotspot
+                        if(confirm("¿Eliminar este punto de conexión?")) {
+                            room.hotspots = room.hotspots.filter(h => h !== hs);
+                            renderEditorHotspots();
+                            autoSave();
+                        }
+                    });
+
+                    hsContainer.appendChild(el);
+                });
+            }
+        }
+
+        // --- MODAL LOGIC --- //
+
+        function openModal() {
+            document.getElementById('hotspot-modal').style.display = 'block';
+            document.getElementById('modal-search').value = '';
+            document.getElementById('modal-label').value = '';
+            document.getElementById('modal-selected-id').value = '';
+            document.getElementById('modal-accept-btn').disabled = true;
+            renderModalList('');
+            document.getElementById('modal-search').focus();
+        }
+
+        function closeModal() {
+            document.getElementById('hotspot-modal').style.display = 'none';
+            if (tempHotspot) {
+                tempHotspot.parentNode.removeChild(tempHotspot);
+                tempHotspot = null;
+            }
+            selectedPosition = null;
+        }
+
+        document.getElementById('modal-search').addEventListener('input', (e) => {
+            renderModalList(e.target.value);
+        });
+
+        function renderModalList(filterStr) {
+            const list = document.getElementById('modal-image-list');
+            list.innerHTML = '';
+            const lowerFilter = filterStr.toLowerCase();
+
+            tourData.forEach(p => {
+                if (p.id !== currentEditorRoomId && p.name.toLowerCase().includes(lowerFilter)) {
+                    const row = document.createElement('div');
+                    row.style.display = 'flex';
+                    row.style.alignItems = 'center';
+                    row.style.gap = '10px';
+                    row.style.padding = '8px';
+                    row.style.background = '#222';
+                    row.style.borderRadius = '5px';
+                    row.style.cursor = 'pointer';
+                    row.className = 'modal-list-item';
+
+                    const img = document.createElement('img');
+                    img.src = p.image;
+                    img.style.width = '60px';
+                    img.style.height = '40px';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '3px';
+
+                    const name = document.createElement('span');
+                    name.innerText = p.name;
+                    name.style.fontSize = '14px';
+
+                    row.appendChild(img);
+                    row.appendChild(name);
+
+                    row.onclick = () => {
+                        // Deselect others
+                        document.querySelectorAll('.modal-list-item').forEach(el => {
+                            el.style.background = '#222';
+                            el.style.border = '1px solid transparent';
+                        });
+                        row.style.background = '#0056b3';
+                        row.style.border = '1px solid #00C6FF';
+                        
+                        document.getElementById('modal-selected-id').value = p.id;
+                        document.getElementById('modal-accept-btn').disabled = false;
+
+                        // Auto-fill label
+                        if(!document.getElementById('modal-label').value) {
+                            document.getElementById('modal-label').value = p.name;
+                        }
+                    };
+
+                    list.appendChild(row);
+                }
+            });
+        }
+
+        function acceptModal() {
+            if(!selectedPosition) return;
+            const targetId = document.getElementById('modal-selected-id').value;
+            if(!targetId) return;
+
+            const room = tourData.find(r => r.id === currentEditorRoomId);
+            if (!room.hotspots) room.hotspots = [];
+            
+            // Normalize selectedPosition to distance 5
+            let len = Math.sqrt(selectedPosition.x**2 + selectedPosition.y**2 + selectedPosition.z**2);
+            let scale = 5 / len;
+            let normX = selectedPosition.x * scale;
+            let normY = selectedPosition.y * scale;
+            let normZ = selectedPosition.z * scale;
+            
+            const hsStr = `${normX.toFixed(2)} ${normY.toFixed(2)} ${normZ.toFixed(2)}`;
+            const labelInput = document.getElementById('modal-label').value.trim();
+            const targetRoom = tourData.find(r => r.id === targetId);
+            const finalLabel = labelInput || (targetRoom ? targetRoom.name : targetId);
+
+            room.hotspots.push({
+                target: targetId,
+                position: hsStr,
+                label: finalLabel
+            });
+            
+            document.getElementById('hotspot-modal').style.display = 'none';
+            if (tempHotspot) {
+                tempHotspot.parentNode.removeChild(tempHotspot);
+                tempHotspot = null;
+            }
+            selectedPosition = null;
+            
+            renderEditorHotspots();
+            autoSave();
+        }
+
+        // Make clicking the sky no longer add points directly, only the center circle does
+        // But we keep this listener just to close modal if clicked outside, etc.
+        
+        function addPointAtCenter() {
+            const cameraEl = document.querySelector('a-scene').camera.el;
+            
+            // localToWorld gets the exact point 5 meters in front of the camera
+            const localPoint = new THREE.Vector3(0, 0, -5);
+            cameraEl.object3D.localToWorld(localPoint);
+            
+            selectedPosition = { x: localPoint.x, y: localPoint.y, z: localPoint.z };
+            
+            if (tempHotspot) {
+                tempHotspot.setAttribute('position', selectedPosition);
+            } else {
+                tempHotspot = document.createElement('a-entity');
+                tempHotspot.setAttribute('geometry', 'primitive: circle; radius: 0.2');
+                tempHotspot.setAttribute('material', 'color: #007bff; shader: flat; opacity: 0.9');
+                tempHotspot.setAttribute('position', selectedPosition);
+                tempHotspot.setAttribute('look-at-cam', '');
+                document.querySelector('a-scene').appendChild(tempHotspot);
+            }
+            
+            openModal();
+        }
+    </script>
+</body>
+</html>

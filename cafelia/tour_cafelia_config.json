@@ -1,0 +1,334 @@
+{
+    "tour": [
+        {
+            "id": "point_1",
+            "name": "Lugar 1 (Cafelia360_01.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_01.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_2",
+            "name": "Lugar 2 (Cafelia360_02.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_02.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_3",
+            "name": "Lugar 3 (Cafelia360_03.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_03.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_4",
+            "name": "Lugar 4 (Cafelia360_04.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_04.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_5",
+            "name": "Lugar 5 (Cafelia360_05.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_05.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_6",
+            "name": "Lugar 6 (Cafelia360_06.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_06.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_7",
+            "name": "Lugar 7 (Cafelia360_07.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_07.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_8",
+            "name": "Lugar 8 (Cafelia360_08.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_08.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_9",
+            "name": "Lugar 9 (Cafelia360_09.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_09.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_10",
+            "name": "Lugar 10 (Cafelia360_10.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_10.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_11",
+            "name": "Lugar 11 (Cafelia360_11.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_11.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_12",
+            "name": "Lugar 12 (Cafelia360_12.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_12.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_13",
+            "name": "Lugar 13 (Cafelia360_13.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_13.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_14",
+            "name": "Lugar 14 (Cafelia360_14.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_14.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_15",
+            "name": "Lugar 15 (Cafelia360_15.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_15.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_16",
+            "name": "Lugar 16 (Cafelia360_16.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_16.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_17",
+            "name": "Lugar 17 (Cafelia360_17.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_17.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_18",
+            "name": "Lugar 18 (Cafelia360_18.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_18.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_19",
+            "name": "Lugar 19 (Cafelia360_19.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_19.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_20",
+            "name": "Lugar 20 (Cafelia360_20.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_20.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_21",
+            "name": "Lugar 21 (Cafelia360_21.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_21.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_22",
+            "name": "Lugar 22 (Cafelia360_22.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_22.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_23",
+            "name": "Lugar 23 (Cafelia360_23.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_23.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_24",
+            "name": "Lugar 24 (Cafelia360_24.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_24.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_25",
+            "name": "Lugar 25 (Cafelia360_25.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_25.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_26",
+            "name": "Lugar 26 (Cafelia360_26.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_26.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_27",
+            "name": "Lugar 27 (Cafelia360_27.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_27.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_28",
+            "name": "Lugar 28 (Cafelia360_28.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_28.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_29",
+            "name": "Lugar 29 (Cafelia360_29.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_29.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_30",
+            "name": "Lugar 30 (Cafelia360_30.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_30.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_31",
+            "name": "Lugar 31 (Cafelia360_31.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_31.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_32",
+            "name": "Lugar 32 (Cafelia360_32.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_32.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_33",
+            "name": "Lugar 33 (Cafelia360_33.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_33.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_34",
+            "name": "Lugar 34 (Cafelia360_34.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_34.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_35",
+            "name": "Lugar 35 (Cafelia360_35.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_35.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_36",
+            "name": "Lugar 36 (Cafelia360_36.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_36.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_37",
+            "name": "Lugar 37 (Cafelia360_37.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_37.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_38",
+            "name": "Lugar 38 (Cafelia360_38.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_38.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_39",
+            "name": "Lugar 39 (Cafelia360_39.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_39.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_40",
+            "name": "Lugar 40 (Cafelia360_40.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_40.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_41",
+            "name": "Lugar 41 (Cafelia360_41.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_41.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_42",
+            "name": "Lugar 42 (Cafelia360_42.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_42.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_43",
+            "name": "Lugar 43 (Cafelia360_43.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_43.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_44",
+            "name": "Lugar 44 (Cafelia360_44.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_44.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_45",
+            "name": "Lugar 45 (Cafelia360_45.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_45.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_46",
+            "name": "Lugar 46 (Cafelia360_46.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_46.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_47",
+            "name": "Lugar 47 (Cafelia360_47.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_47.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_48",
+            "name": "Lugar 48 (Cafelia360_48.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_48.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_49",
+            "name": "Lugar 49 (Cafelia360_49.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_49.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_50",
+            "name": "Lugar 50 (Cafelia360_50.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_50.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_51",
+            "name": "Lugar 51 (Cafelia360_51.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_51.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_52",
+            "name": "Lugar 52 (Cafelia360_52.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_52.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_53",
+            "name": "Lugar 53 (Cafelia360_53.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_53.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_54",
+            "name": "Lugar 54 (Cafelia360_54.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_54.jpg",
+            "hotspots": []
+        },
+        {
+            "id": "point_55",
+            "name": "Lugar 55 (Cafelia360_55.jpg)",
+            "image": "/img/tours/cafelia/Cafelia360_55.jpg",
+            "hotspots": []
+        }
+    ]
+}

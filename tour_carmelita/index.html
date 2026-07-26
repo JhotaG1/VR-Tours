@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tour Virtual - Casa La Carmelita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Pannellum library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        #panorama { width: 100vw; height: 100vh; }
+        #menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        select, button {
+            padding: 8px;
+            font-size: 14px;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .scene-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 2px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .scene-btn:hover {
+            background: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="menu">
+    <b>Navegación:</b><br><br>
+    <div id="scene-list"></div>
+</div>
+
+<div id="panorama"></div>
+
+<script>
+    // Pannellum Configuration
+    var config = {
+        "default": {
+            "firstScene": "escena_1",
+            "sceneFadeDuration": 1000,
+            "autoLoad": true
+        },
+        "scenes": {
+    "escena_1": {
+        "title": "Escena 1",
+        "type": "equirectangular",
+        "panorama": "images/escena_1.jpg",
+        "autoLoad": true
+    },
+    "escena_2": {
+        "title": "Escena 2",
+        "type": "equirectangular",
+        "panorama": "images/escena_2.jpg",
+        "autoLoad": false
+    },
+    "escena_3": {
+        "title": "Escena 3",
+        "type": "equirectangular",
+        "panorama": "images/escena_3.jpg",
+        "autoLoad": false
+    },
+    "escena_4": {
+        "title": "Escena 4",
+        "type": "equirectangular",
+        "panorama": "images/escena_4.jpg",
+        "autoLoad": false
+    },
+    "escena_5": {
+        "title": "Escena 5",
+        "type": "equirectangular",
+        "panorama": "images/escena_5.jpg",
+        "autoLoad": false
+    },
+    "escena_6": {
+        "title": "Escena 6",
+        "type": "equirectangular",
+        "panorama": "images/escena_6.jpg",
+        "autoLoad": false
+    },
+    "escena_7": {
+        "title": "Escena 7",
+        "type": "equirectangular",
+        "panorama": "images/escena_7.jpg",
+        "autoLoad": false
+    },
+    "escena_8": {
+        "title": "Escena 8",
+        "type": "equirectangular",
+        "panorama": "images/escena_8.jpg",
+        "autoLoad": false
+    },
+    "escena_9": {
+        "title": "Escena 9",
+        "type": "equirectangular",
+        "panorama": "images/escena_9.jpg",
+        "autoLoad": false
+    },
+    "escena_10": {
+        "title": "Escena 10",
+        "type": "equirectangular",
+        "panorama": "images/escena_10.jpg",
+        "autoLoad": false
+    },
+    "escena_11": {
+        "title": "Escena 11",
+        "type": "equirectangular",
+        "panorama": "images/escena_11.jpg",
+        "autoLoad": false
+    },
+    "escena_12": {
+        "title": "Escena 12",
+        "type": "equirectangular",
+        "panorama": "images/escena_12.jpg",
+        "autoLoad": false
+    },
+    "escena_13": {
+        "title": "Escena 13",
+        "type": "equirectangular",
+        "panorama": "images/escena_13.jpg",
+        "autoLoad": false
+    },
+    "escena_14": {
+        "title": "Escena 14",
+        "type": "equirectangular",
+        "panorama": "images/escena_14.jpg",
+        "autoLoad": false
+    },
+    "escena_15": {
+        "title": "Escena 15",
+        "type": "equirectangular",
+        "panorama": "images/escena_15.jpg",
+        "autoLoad": false
+    },
+    "escena_16": {
+        "title": "Escena 16",
+        "type": "equirectangular",
+        "panorama": "images/escena_16.jpg",
+        "autoLoad": false
+    },
+    "escena_17": {
+        "title": "Escena 17",
+        "type": "equirectangular",
+        "panorama": "images/escena_17.jpg",
+        "autoLoad": false
+    },
+    "escena_18": {
+        "title": "Escena 18",
+        "type": "equirectangular",
+        "panorama": "images/escena_18.jpg",
+        "autoLoad": false
+    },
+    "escena_19": {
+        "title": "Escena 19",
+        "type": "equirectangular",
+        "panorama": "images/escena_19.jpg",
+        "autoLoad": false
+    },
+    "escena_20": {
+        "title": "Escena 20",
+        "type": "equirectangular",
+        "panorama": "images/escena_20.jpg",
+        "autoLoad": false
+    },
+    "escena_21": {
+        "title": "Escena 21",
+        "type": "equirectangular",
+        "panorama": "images/escena_21.jpg",
+        "autoLoad": false
+    },
+    "escena_22": {
+        "title": "Escena 22",
+        "type": "equirectangular",
+        "panorama": "images/escena_22.jpg",
+        "autoLoad": false
+    },
+    "escena_23": {
+        "title": "Escena 23",
+        "type": "equirectangular",
+        "panorama": "images/escena_23.jpg",
+        "autoLoad": false
+    },
+    "escena_24": {
+        "title": "Escena 24",
+        "type": "equirectangular",
+        "panorama": "images/escena_24.jpg",
+        "autoLoad": false
+    },
+    "escena_25": {
+        "title": "Escena 25",
+        "type": "equirectangular",
+        "panorama": "images/escena_25.jpg",
+        "autoLoad": false
+    },
+    "escena_26": {
+        "title": "Escena 26",
+        "type": "equirectangular",
+        "panorama": "images/escena_26.jpg",
+        "autoLoad": false
+    },
+    "escena_27": {
+        "title": "Escena 27",
+        "type": "equirectangular",
+        "panorama": "images/escena_27.jpg",
+        "autoLoad": false
+    },
+    "escena_28": {
+        "title": "Escena 28",
+        "type": "equirectangular",
+        "panorama": "images/escena_28.jpg",
+        "autoLoad": false
+    },
+    "escena_29": {
+        "title": "Escena 29",
+        "type": "equirectangular",
+        "panorama": "images/escena_29.jpg",
+        "autoLoad": false
+    },
+    "escena_30": {
+        "title": "Escena 30",
+        "type": "equirectangular",
+        "panorama": "images/escena_30.jpg",
+        "autoLoad": false
+    },
+    "escena_31": {
+        "title": "Escena 31",
+        "type": "equirectangular",
+        "panorama": "images/escena_31.jpg",
+        "autoLoad": false
+    },
+    "escena_32": {
+        "title": "Escena 32",
+        "type": "equirectangular",
+        "panorama": "images/escena_32.jpg",
+        "autoLoad": false
+    },
+    "escena_33": {
+        "title": "Escena 33",
+        "type": "equirectangular",
+        "panorama": "images/escena_33.jpg",
+        "autoLoad": false
+    },
+    "escena_34": {
+        "title": "Escena 34",
+        "type": "equirectangular",
+        "panorama": "images/escena_34.jpg",
+        "autoLoad": false
+    },
+    "escena_35": {
+        "title": "Escena 35",
+        "type": "equirectangular",
+        "panorama": "images/escena_35.jpg",
+        "autoLoad": false
+    },
+    "escena_36": {
+        "title": "Escena 36",
+        "type": "equirectangular",
+        "panorama": "images/escena_36.jpg",
+        "autoLoad": false
+    },
+    "escena_37": {
+        "title": "Escena 37",
+        "type": "equirectangular",
+        "panorama": "images/escena_37.jpg",
+        "autoLoad": false
+    },
+    "escena_38": {
+        "title": "Escena 38",
+        "type": "equirectangular",
+        "panorama": "images/escena_38.jpg",
+        "autoLoad": false
+    },
+    "escena_39": {
+        "title": "Escena 39",
+        "type": "equirectangular",
+        "panorama": "images/escena_39.jpg",
+        "autoLoad": false
+    },
+    "escena_40": {
+        "title": "Escena 40",
+        "type": "equirectangular",
+        "panorama": "images/escena_40.jpg",
+        "autoLoad": false
+    },
+    "escena_41": {
+        "title": "Escena 41",
+        "type": "equirectangular",
+        "panorama": "images/escena_41.jpg",
+        "autoLoad": false
+    },
+    "escena_42": {
+        "title": "Escena 42",
+        "type": "equirectangular",
+        "panorama": "images/escena_42.jpg",
+        "autoLoad": false
+    },
+    "escena_43": {
+        "title": "Escena 43",
+        "type": "equirectangular",
+        "panorama": "images/escena_43.jpg",
+        "autoLoad": false
+    },
+    "escena_44": {
+        "title": "Escena 44",
+        "type": "equirectangular",
+        "panorama": "images/escena_44.jpg",
+        "autoLoad": false
+    }
+}
+    };
+
+    var viewer = pannellum.viewer('panorama', config);
+
+    // Build the navigation menu
+    var sceneList = document.getElementById('scene-list');
+    for (var sceneId in config.scenes) {
+        var btn = document.createElement('button');
+        btn.className = 'scene-btn';
+        btn.textContent = config.scenes[sceneId].title;
+        btn.onclick = (function(id) {
+            return function() {
+                viewer.loadScene(id);
+            };
+        })(sceneId);
+        sceneList.appendChild(btn);
+    }
+</script>
+
+</body>
+</html>
